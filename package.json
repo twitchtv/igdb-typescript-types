@@ -1,0 +1,16 @@
+{
+  "name": "@igdb/types",
+  "version": "0.0.1",
+  "description": "Typescript definitions for IGDB API",
+  "main": "index.d.ts",
+  "scripts": {
+    "start": "node build.js",
+    "debug": "node --inspect-brk build.js"
+  },
+  "author": "Jake Cattrall",
+  "license": "MIT",
+  "dependencies": {
+    "proto-parse": "0.0.4",
+    "typescript-interface-generator": "0.0.6"
+  }
+}
