@@ -54,6 +54,11 @@ getProto().then(rawProto => {
         dataType[c.name] = defaultType;
       } else {
         let customType = c.typename;
+
+        if (customType === 'bytes') {
+          customType = 'Any';
+        }
+
         if (c.repeated === true) {
           customType = `Array<${customType}>`;
         }
@@ -67,11 +72,11 @@ getProto().then(rawProto => {
       definitionString = replaceUndefined(definitionString, key, referenceTypes[key]);
     });
 
-    dataContainer.push(definitionString);
+    dataContainer.push(`export ${definitionString}`);
   });
 
   enums.forEach(e => {
-    let definitionString = `\nenum ${e.name} {\n`;
+    let definitionString = `\nexport enum ${e.name} {\n`;
     definitionString += e.content.map(c => `  ${c.name} = ${c.val}`).join(',\n');
     definitionString += '\n}';
     dataContainer.push(definitionString);

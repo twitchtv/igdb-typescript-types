@@ -1,22 +1,22 @@
-interface Count {
+export interface Count {
   count: number;
 }
 
-interface MultiQueryResult {
+export interface MultiQueryResult {
   name: string;
-  results: Array<bytes>;
+  results: Array<Any>;
   count: number;
 }
 
-interface MultiQueryResultArray {
+export interface MultiQueryResultArray {
   result: Array<MultiQueryResult>;
 }
 
-interface AchievementResult {
+export interface AchievementResult {
   achievements: Array<Achievement>;
 }
 
-interface Achievement {
+export interface Achievement {
   id: number;
   achievementIcon: AchievementIcon;
   category: AchievementCategoryEnum;
@@ -34,11 +34,11 @@ interface Achievement {
   updatedAt: number;
 }
 
-interface AchievementIconResult {
+export interface AchievementIconResult {
   achievementicons: Array<AchievementIcon>;
 }
 
-interface AchievementIcon {
+export interface AchievementIcon {
   id: number;
   alphaChannel: boolean;
   animated: boolean;
@@ -48,11 +48,11 @@ interface AchievementIcon {
   width: number;
 }
 
-interface AgeRatingResult {
+export interface AgeRatingResult {
   ageratings: Array<AgeRating>;
 }
 
-interface AgeRating {
+export interface AgeRating {
   id: number;
   category: AgeRatingCategoryEnum;
   contentDescriptions: Array<AgeRatingContentDescription>;
@@ -61,32 +61,32 @@ interface AgeRating {
   synopsis: string;
 }
 
-interface AgeRatingContentDescriptionResult {
+export interface AgeRatingContentDescriptionResult {
   ageratingcontentdescriptions: Array<AgeRatingContentDescription>;
 }
 
-interface AgeRatingContentDescription {
+export interface AgeRatingContentDescription {
   id: number;
   category: AgeRatingRatingEnum;
   description: string;
 }
 
-interface AlternativeNameResult {
+export interface AlternativeNameResult {
   alternativenames: Array<AlternativeName>;
 }
 
-interface AlternativeName {
+export interface AlternativeName {
   id: number;
   comment: string;
   game: Game;
   name: string;
 }
 
-interface ApiTokenResult {
+export interface ApiTokenResult {
   apitokens: Array<ApiToken>;
 }
 
-interface ApiToken {
+export interface ApiToken {
   id: number;
   createdAt: number;
   expiresIn: number;
@@ -94,11 +94,11 @@ interface ApiToken {
   user: number;
 }
 
-interface ArtworkResult {
+export interface ArtworkResult {
   artworks: Array<Artwork>;
 }
 
-interface Artwork {
+export interface Artwork {
   id: number;
   alphaChannel: boolean;
   animated: boolean;
@@ -109,11 +109,11 @@ interface Artwork {
   width: number;
 }
 
-interface CharacterResult {
+export interface CharacterResult {
   characters: Array<Character>;
 }
 
-interface Character {
+export interface Character {
   id: number;
   akas: Array<string>;
   countryName: string;
@@ -130,11 +130,11 @@ interface Character {
   url: string;
 }
 
-interface CharacterMugShotResult {
+export interface CharacterMugShotResult {
   charactermugshots: Array<CharacterMugShot>;
 }
 
-interface CharacterMugShot {
+export interface CharacterMugShot {
   id: number;
   alphaChannel: boolean;
   animated: boolean;
@@ -144,11 +144,11 @@ interface CharacterMugShot {
   width: number;
 }
 
-interface CollectionResult {
+export interface CollectionResult {
   collections: Array<Collection>;
 }
 
-interface Collection {
+export interface Collection {
   id: number;
   createdAt: number;
   games: Array<Game>;
@@ -158,11 +158,11 @@ interface Collection {
   url: string;
 }
 
-interface CompanyResult {
+export interface CompanyResult {
   companies: Array<Company>;
 }
 
-interface Company {
+export interface Company {
   id: number;
   changeDate: number;
   changeDateCategory: DateFormatStartDateCategoryEnum;
@@ -183,11 +183,11 @@ interface Company {
   websites: Array<CompanyWebsite>;
 }
 
-interface CompanyLogoResult {
+export interface CompanyLogoResult {
   companylogos: Array<CompanyLogo>;
 }
 
-interface CompanyLogo {
+export interface CompanyLogo {
   id: number;
   alphaChannel: boolean;
   animated: boolean;
@@ -197,22 +197,22 @@ interface CompanyLogo {
   width: number;
 }
 
-interface CompanyWebsiteResult {
+export interface CompanyWebsiteResult {
   companywebsites: Array<CompanyWebsite>;
 }
 
-interface CompanyWebsite {
+export interface CompanyWebsite {
   id: number;
   category: WebsiteCategoryEnum;
   trusted: boolean;
   url: string;
 }
 
-interface CoverResult {
+export interface CoverResult {
   covers: Array<Cover>;
 }
 
-interface Cover {
+export interface Cover {
   id: number;
   alphaChannel: boolean;
   animated: boolean;
@@ -223,11 +223,11 @@ interface Cover {
   width: number;
 }
 
-interface CreditResult {
+export interface CreditResult {
   credits: Array<Credit>;
 }
 
-interface Credit {
+export interface Credit {
   id: number;
   category: CreditCategoryEnum;
   character: Character;
@@ -244,11 +244,11 @@ interface Credit {
   updatedAt: number;
 }
 
-interface ExternalGameResult {
+export interface ExternalGameResult {
   externalgames: Array<ExternalGame>;
 }
 
-interface ExternalGame {
+export interface ExternalGame {
   id: number;
   category: ExternalGameCategoryEnum;
   createdAt: number;
@@ -260,11 +260,11 @@ interface ExternalGame {
   year: number;
 }
 
-interface FeedResult {
+export interface FeedResult {
   feeds: Array<Feed>;
 }
 
-interface Feed {
+export interface Feed {
   id: number;
   category: FeedCategoryEnum;
   content: string;
@@ -283,11 +283,11 @@ interface Feed {
   user: number;
 }
 
-interface FeedFollowResult {
+export interface FeedFollowResult {
   feedfollows: Array<FeedFollow>;
 }
 
-interface FeedFollow {
+export interface FeedFollow {
   id: number;
   createdAt: number;
   feed: FeedCategoryEnum;
@@ -296,21 +296,21 @@ interface FeedFollow {
   user: User;
 }
 
-interface FollowResult {
+export interface FollowResult {
   follows: Array<Follow>;
 }
 
-interface Follow {
+export interface Follow {
   id: number;
   game: Game;
   user: User;
 }
 
-interface FranchiseResult {
+export interface FranchiseResult {
   franchises: Array<Franchise>;
 }
 
-interface Franchise {
+export interface Franchise {
   id: number;
   createdAt: number;
   games: Array<Game>;
@@ -320,11 +320,11 @@ interface Franchise {
   url: string;
 }
 
-interface GameResult {
+export interface GameResult {
   games: Array<Game>;
 }
 
-interface Game {
+export interface Game {
   id: number;
   ageRatings: Array<AgeRating>;
   aggregatedRating: number;
@@ -379,11 +379,11 @@ interface Game {
   websites: Array<Website>;
 }
 
-interface GameEngineResult {
+export interface GameEngineResult {
   gameengines: Array<GameEngine>;
 }
 
-interface GameEngine {
+export interface GameEngine {
   id: number;
   companies: Array<Company>;
   createdAt: number;
@@ -396,11 +396,11 @@ interface GameEngine {
   url: string;
 }
 
-interface GameEngineLogoResult {
+export interface GameEngineLogoResult {
   gameenginelogos: Array<GameEngineLogo>;
 }
 
-interface GameEngineLogo {
+export interface GameEngineLogo {
   id: number;
   alphaChannel: boolean;
   animated: boolean;
@@ -410,11 +410,11 @@ interface GameEngineLogo {
   width: number;
 }
 
-interface GameModeResult {
+export interface GameModeResult {
   gamemodes: Array<GameMode>;
 }
 
-interface GameMode {
+export interface GameMode {
   id: number;
   createdAt: number;
   name: string;
@@ -423,11 +423,11 @@ interface GameMode {
   url: string;
 }
 
-interface GameVersionResult {
+export interface GameVersionResult {
   gameversions: Array<GameVersion>;
 }
 
-interface GameVersion {
+export interface GameVersion {
   id: number;
   createdAt: number;
   features: Array<GameVersionFeature>;
@@ -437,11 +437,11 @@ interface GameVersion {
   url: string;
 }
 
-interface GameVersionFeatureResult {
+export interface GameVersionFeatureResult {
   gameversionfeatures: Array<GameVersionFeature>;
 }
 
-interface GameVersionFeature {
+export interface GameVersionFeature {
   id: number;
   category: GameVersionFeatureCategoryEnum;
   description: string;
@@ -450,11 +450,11 @@ interface GameVersionFeature {
   values: Array<GameVersionFeatureValue>;
 }
 
-interface GameVersionFeatureValueResult {
+export interface GameVersionFeatureValueResult {
   gameversionfeaturevalues: Array<GameVersionFeatureValue>;
 }
 
-interface GameVersionFeatureValue {
+export interface GameVersionFeatureValue {
   id: number;
   game: Game;
   gameFeature: GameVersionFeature;
@@ -462,22 +462,22 @@ interface GameVersionFeatureValue {
   note: string;
 }
 
-interface GameVideoResult {
+export interface GameVideoResult {
   gamevideos: Array<GameVideo>;
 }
 
-interface GameVideo {
+export interface GameVideo {
   id: number;
   game: Game;
   name: string;
   videoId: string;
 }
 
-interface GenreResult {
+export interface GenreResult {
   genres: Array<Genre>;
 }
 
-interface Genre {
+export interface Genre {
   id: number;
   createdAt: number;
   name: string;
@@ -486,11 +486,11 @@ interface Genre {
   url: string;
 }
 
-interface InvolvedCompanyResult {
+export interface InvolvedCompanyResult {
   involvedcompanies: Array<InvolvedCompany>;
 }
 
-interface InvolvedCompany {
+export interface InvolvedCompany {
   id: number;
   company: Company;
   createdAt: number;
@@ -502,11 +502,11 @@ interface InvolvedCompany {
   updatedAt: number;
 }
 
-interface KeywordResult {
+export interface KeywordResult {
   keywords: Array<Keyword>;
 }
 
-interface Keyword {
+export interface Keyword {
   id: number;
   createdAt: number;
   name: string;
@@ -515,11 +515,11 @@ interface Keyword {
   url: string;
 }
 
-interface ListResult {
+export interface ListResult {
   lists: Array<List>;
 }
 
-interface List {
+export interface List {
   id: number;
   createdAt: number;
   description: string;
@@ -537,11 +537,11 @@ interface List {
   user: User;
 }
 
-interface ListEntryResult {
+export interface ListEntryResult {
   listentries: Array<ListEntry>;
 }
 
-interface ListEntry {
+export interface ListEntry {
   id: number;
   description: string;
   game: Game;
@@ -552,11 +552,11 @@ interface ListEntry {
   user: User;
 }
 
-interface MultiplayerModeResult {
+export interface MultiplayerModeResult {
   multiplayermodes: Array<MultiplayerMode>;
 }
 
-interface MultiplayerMode {
+export interface MultiplayerMode {
   id: number;
   campaigncoop: boolean;
   dropin: boolean;
@@ -573,11 +573,11 @@ interface MultiplayerMode {
   splitscreenonline: boolean;
 }
 
-interface PageResult {
+export interface PageResult {
   pages: Array<Page>;
 }
 
-interface Page {
+export interface Page {
   id: number;
   background: PageBackground;
   battlenet: string;
@@ -602,11 +602,11 @@ interface Page {
   websites: Array<PageWebsite>;
 }
 
-interface PageBackgroundResult {
+export interface PageBackgroundResult {
   pagebackgrounds: Array<PageBackground>;
 }
 
-interface PageBackground {
+export interface PageBackground {
   id: number;
   alphaChannel: boolean;
   animated: boolean;
@@ -616,11 +616,11 @@ interface PageBackground {
   width: number;
 }
 
-interface PageLogoResult {
+export interface PageLogoResult {
   pagelogos: Array<PageLogo>;
 }
 
-interface PageLogo {
+export interface PageLogo {
   id: number;
   alphaChannel: boolean;
   animated: boolean;
@@ -630,22 +630,22 @@ interface PageLogo {
   width: number;
 }
 
-interface PageWebsiteResult {
+export interface PageWebsiteResult {
   pagewebsites: Array<PageWebsite>;
 }
 
-interface PageWebsite {
+export interface PageWebsite {
   id: number;
   category: WebsiteCategoryEnum;
   trusted: boolean;
   url: string;
 }
 
-interface PersonResult {
+export interface PersonResult {
   people: Array<Person>;
 }
 
-interface Person {
+export interface Person {
   id: number;
   bio: string;
   characters: Array<Character>;
@@ -667,11 +667,11 @@ interface Person {
   websites: Array<PersonWebsite>;
 }
 
-interface PersonMugShotResult {
+export interface PersonMugShotResult {
   personmugshots: Array<PersonMugShot>;
 }
 
-interface PersonMugShot {
+export interface PersonMugShot {
   id: number;
   height: number;
   imageId: string;
@@ -679,22 +679,22 @@ interface PersonMugShot {
   width: number;
 }
 
-interface PersonWebsiteResult {
+export interface PersonWebsiteResult {
   personwebsites: Array<PersonWebsite>;
 }
 
-interface PersonWebsite {
+export interface PersonWebsite {
   id: number;
   category: WebsiteCategoryEnum;
   trusted: boolean;
   url: string;
 }
 
-interface PlatformResult {
+export interface PlatformResult {
   platforms: Array<Platform>;
 }
 
-interface Platform {
+export interface Platform {
   id: number;
   abbreviation: string;
   alternativeName: string;
@@ -712,11 +712,11 @@ interface Platform {
   websites: Array<PlatformWebsite>;
 }
 
-interface PlatformLogoResult {
+export interface PlatformLogoResult {
   platformlogos: Array<PlatformLogo>;
 }
 
-interface PlatformLogo {
+export interface PlatformLogo {
   id: number;
   alphaChannel: boolean;
   animated: boolean;
@@ -726,11 +726,11 @@ interface PlatformLogo {
   width: number;
 }
 
-interface PlatformVersionResult {
+export interface PlatformVersionResult {
   platformversions: Array<PlatformVersion>;
 }
 
-interface PlatformVersion {
+export interface PlatformVersion {
   id: number;
   companies: Array<PlatformVersionCompany>;
   connectivity: string;
@@ -753,11 +753,11 @@ interface PlatformVersion {
   url: string;
 }
 
-interface PlatformVersionCompanyResult {
+export interface PlatformVersionCompanyResult {
   platformversioncompanies: Array<PlatformVersionCompany>;
 }
 
-interface PlatformVersionCompany {
+export interface PlatformVersionCompany {
   id: number;
   comment: string;
   company: Company;
@@ -765,11 +765,11 @@ interface PlatformVersionCompany {
   manufacturer: boolean;
 }
 
-interface PlatformVersionReleaseDateResult {
+export interface PlatformVersionReleaseDateResult {
   platformversionreleasedates: Array<PlatformVersionReleaseDate>;
 }
 
-interface PlatformVersionReleaseDate {
+export interface PlatformVersionReleaseDate {
   id: number;
   category: DateFormatStartDateCategoryEnum;
   createdAt: number;
@@ -782,22 +782,22 @@ interface PlatformVersionReleaseDate {
   y: number;
 }
 
-interface PlatformWebsiteResult {
+export interface PlatformWebsiteResult {
   platformwebsites: Array<PlatformWebsite>;
 }
 
-interface PlatformWebsite {
+export interface PlatformWebsite {
   id: number;
   category: WebsiteCategoryEnum;
   trusted: boolean;
   url: string;
 }
 
-interface PlayerPerspectiveResult {
+export interface PlayerPerspectiveResult {
   playerperspectives: Array<PlayerPerspective>;
 }
 
-interface PlayerPerspective {
+export interface PlayerPerspective {
   id: number;
   createdAt: number;
   name: string;
@@ -806,21 +806,21 @@ interface PlayerPerspective {
   url: string;
 }
 
-interface ProductFamilyResult {
+export interface ProductFamilyResult {
   productfamilies: Array<ProductFamily>;
 }
 
-interface ProductFamily {
+export interface ProductFamily {
   id: number;
   name: string;
   slug: string;
 }
 
-interface PulseResult {
+export interface PulseResult {
   pulses: Array<Pulse>;
 }
 
-interface Pulse {
+export interface Pulse {
   id: number;
   author: string;
   category: number;
@@ -839,11 +839,11 @@ interface Pulse {
   website: PulseUrl;
 }
 
-interface PulseGroupResult {
+export interface PulseGroupResult {
   pulsegroups: Array<PulseGroup>;
 }
 
-interface PulseGroup {
+export interface PulseGroup {
   id: number;
   createdAt: number;
   game: Game;
@@ -854,11 +854,11 @@ interface PulseGroup {
   updatedAt: number;
 }
 
-interface PulseImageResult {
+export interface PulseImageResult {
   pulseimages: Array<PulseImage>;
 }
 
-interface PulseImage {
+export interface PulseImage {
   id: number;
   alphaChannel: boolean;
   animated: boolean;
@@ -868,43 +868,43 @@ interface PulseImage {
   width: number;
 }
 
-interface PulseSourceResult {
+export interface PulseSourceResult {
   pulsesources: Array<PulseSource>;
 }
 
-interface PulseSource {
+export interface PulseSource {
   id: number;
   game: Game;
   name: string;
   page: Page;
 }
 
-interface PulseUrlResult {
+export interface PulseUrlResult {
   pulseurls: Array<PulseUrl>;
 }
 
-interface PulseUrl {
+export interface PulseUrl {
   id: number;
   trusted: boolean;
   url: string;
 }
 
-interface RateResult {
+export interface RateResult {
   rates: Array<Rate>;
 }
 
-interface Rate {
+export interface Rate {
   id: number;
   game: Game;
   rating: number;
   user: User;
 }
 
-interface ReleaseDateResult {
+export interface ReleaseDateResult {
   releasedates: Array<ReleaseDate>;
 }
 
-interface ReleaseDate {
+export interface ReleaseDate {
   id: number;
   category: DateFormatStartDateCategoryEnum;
   createdAt: number;
@@ -918,11 +918,11 @@ interface ReleaseDate {
   y: number;
 }
 
-interface ReviewResult {
+export interface ReviewResult {
   reviews: Array<Review>;
 }
 
-interface Review {
+export interface Review {
   id: number;
   category: ReviewCategoryEnum;
   conclusion: string;
@@ -944,21 +944,21 @@ interface Review {
   views: number;
 }
 
-interface ReviewVideoResult {
+export interface ReviewVideoResult {
   reviewvideos: Array<ReviewVideo>;
 }
 
-interface ReviewVideo {
+export interface ReviewVideo {
   id: number;
   trusted: boolean;
   url: string;
 }
 
-interface ScreenshotResult {
+export interface ScreenshotResult {
   screenshots: Array<Screenshot>;
 }
 
-interface Screenshot {
+export interface Screenshot {
   id: number;
   alphaChannel: boolean;
   animated: boolean;
@@ -969,11 +969,11 @@ interface Screenshot {
   width: number;
 }
 
-interface SearchResult {
+export interface SearchResult {
   searches: Array<Search>;
 }
 
-interface Search {
+export interface Search {
   id: number;
   alternativeName: string;
   character: Character;
@@ -990,11 +990,11 @@ interface Search {
   theme: Theme;
 }
 
-interface SocialMetricResult {
+export interface SocialMetricResult {
   socialmetrics: Array<SocialMetric>;
 }
 
-interface SocialMetric {
+export interface SocialMetric {
   id: number;
   category: SocialMetricCategoryEnum;
   createdAt: number;
@@ -1002,11 +1002,11 @@ interface SocialMetric {
   value: number;
 }
 
-interface SocialMetricSourceResult {
+export interface SocialMetricSourceResult {
   socialmetricsources: Array<SocialMetricSource>;
 }
 
-interface SocialMetricSource {
+export interface SocialMetricSource {
   id: number;
   category: number;
   channel: string;
@@ -1026,11 +1026,11 @@ interface SocialMetricSource {
   url: string;
 }
 
-interface TestDummyResult {
+export interface TestDummyResult {
   testdummies: Array<TestDummy>;
 }
 
-interface TestDummy {
+export interface TestDummy {
   id: number;
   boolValue: boolean;
   createdAt: number;
@@ -1051,11 +1051,11 @@ interface TestDummy {
   user: User;
 }
 
-interface ThemeResult {
+export interface ThemeResult {
   themes: Array<Theme>;
 }
 
-interface Theme {
+export interface Theme {
   id: number;
   createdAt: number;
   name: string;
@@ -1064,11 +1064,11 @@ interface Theme {
   url: string;
 }
 
-interface TimeToBeatResult {
+export interface TimeToBeatResult {
   timetobeats: Array<TimeToBeat>;
 }
 
-interface TimeToBeat {
+export interface TimeToBeat {
   id: number;
   completely: number;
   game: Game;
@@ -1076,11 +1076,11 @@ interface TimeToBeat {
   normally: number;
 }
 
-interface TitleResult {
+export interface TitleResult {
   titles: Array<Title>;
 }
 
-interface Title {
+export interface Title {
   id: number;
   createdAt: number;
   description: string;
@@ -1091,11 +1091,11 @@ interface Title {
   url: string;
 }
 
-interface UserResult {
+export interface UserResult {
   users: Array<User>;
 }
 
-interface User {
+export interface User {
   id: number;
   battlenet: string;
   color: ColorColorEnum;
@@ -1122,11 +1122,11 @@ interface User {
   youtube: string;
 }
 
-interface WebsiteResult {
+export interface WebsiteResult {
   websites: Array<Website>;
 }
 
-interface Website {
+export interface Website {
   id: number;
   category: WebsiteCategoryEnum;
   game: Game;
@@ -1135,14 +1135,14 @@ interface Website {
 }
 
 
-enum AchievementCategoryEnum {
+export enum AchievementCategoryEnum {
   ACHIEVEMENT_CATEGORY_NULL = 0,
   PLAYSTATION = 1,
   XBOX = 2,
   STEAM = 3
 }
 
-enum RegionLanguageEnum {
+export enum RegionLanguageEnum {
   REGION_LANGUAGE_NULL = 0,
   EUROPE = 1,
   NORTH_AMERICA = 2,
@@ -1156,7 +1156,7 @@ enum RegionLanguageEnum {
   SOUTH_KOREA = 10
 }
 
-enum AchievementRankEnum {
+export enum AchievementRankEnum {
   ACHIEVEMENT_RANK_NULL = 0,
   BRONZE = 1,
   SILVER = 2,
@@ -1164,13 +1164,13 @@ enum AchievementRankEnum {
   PLATINUM = 4
 }
 
-enum AgeRatingCategoryEnum {
+export enum AgeRatingCategoryEnum {
   AGERATING_CATEGORY_NULL = 0,
   ESRB = 1,
   PEGI = 2
 }
 
-enum AgeRatingRatingEnum {
+export enum AgeRatingRatingEnum {
   AGERATING_RATING_NULL = 0,
   THREE = 1,
   SEVEN = 2,
@@ -1186,14 +1186,14 @@ enum AgeRatingRatingEnum {
   AO = 12
 }
 
-enum GenderGenderEnum {
+export enum GenderGenderEnum {
   GENDER_GENDER_NULL = 0,
   MALE = 1,
   FEMALE = 2,
   OTHER = 3
 }
 
-enum CharacterSpeciesEnum {
+export enum CharacterSpeciesEnum {
   CHARACTER_SPECIES_NULL = 0,
   HUMAN = 1,
   ALIEN = 2,
@@ -1202,7 +1202,7 @@ enum CharacterSpeciesEnum {
   UNKNOWN = 5
 }
 
-enum DateFormatStartDateCategoryEnum {
+export enum DateFormatStartDateCategoryEnum {
   YYYYMMMMDD = 0,
   YYYYMMMM = 1,
   YYYY = 2,
@@ -1213,7 +1213,7 @@ enum DateFormatStartDateCategoryEnum {
   TBD = 7
 }
 
-enum WebsiteCategoryEnum {
+export enum WebsiteCategoryEnum {
   WEBSITE_CATEGORY_NULL = 0,
   WEBSITE_OFFICIAL = 1,
   WEBSITE_WIKIA = 2,
@@ -1236,7 +1236,7 @@ enum WebsiteCategoryEnum {
   WEBSITE_SOUNDCLOUD = 20
 }
 
-enum CreditCategoryEnum {
+export enum CreditCategoryEnum {
   CREDIT_CATEGORY_NULL = 0,
   VOICE_ACTOR = 1,
   LANGUAGE = 2,
@@ -1246,7 +1246,7 @@ enum CreditCategoryEnum {
   SUPPORT_COMPANY = 6
 }
 
-enum ExternalGameCategoryEnum {
+export enum ExternalGameCategoryEnum {
   EXTERNALGAME_CATEGORY_NULL = 0,
   EXTERNALGAME_STEAM = 1,
   EXTERNALGAME_GOG = 5,
@@ -1257,7 +1257,7 @@ enum ExternalGameCategoryEnum {
   EXTERNALGAME_ANDROID = 15
 }
 
-enum FeedCategoryEnum {
+export enum FeedCategoryEnum {
   FEED_CATEGORY_NULL = 0,
   PULSE_ARTICLE = 1,
   COMING_SOON = 2,
@@ -1267,7 +1267,7 @@ enum FeedCategoryEnum {
   PAGE_CONTRIBUTED_ITEM = 7
 }
 
-enum GameCategoryEnum {
+export enum GameCategoryEnum {
   MAIN_GAME = 0,
   DLC_ADDON = 1,
   EXPANSION = 2,
@@ -1275,7 +1275,7 @@ enum GameCategoryEnum {
   STANDALONE_EXPANSION = 4
 }
 
-enum GameStatusEnum {
+export enum GameStatusEnum {
   RELEASED = 0,
   ALPHA = 2,
   BETA = 3,
@@ -1284,18 +1284,18 @@ enum GameStatusEnum {
   CANCELLED = 6
 }
 
-enum GameVersionFeatureCategoryEnum {
+export enum GameVersionFeatureCategoryEnum {
   BOOLEAN = 0,
   DESCRIPTION = 1
 }
 
-enum GameVersionFeatureValueIncludedFeatureEnum {
+export enum GameVersionFeatureValueIncludedFeatureEnum {
   NOT_INCLUDED = 0,
   INCLUDED = 1,
   PRE_ORDER_ONLY = 2
 }
 
-enum PageCategoryEnum {
+export enum PageCategoryEnum {
   PAGE_CATEGORY_NULL = 0,
   PERSONALITY = 1,
   MEDIA_ORGANIZATION = 2,
@@ -1303,7 +1303,7 @@ enum PageCategoryEnum {
   CLAN_TEAM = 4
 }
 
-enum ColorColorEnum {
+export enum ColorColorEnum {
   GREEN = 0,
   BLUE = 1,
   RED = 2,
@@ -1312,7 +1312,7 @@ enum ColorColorEnum {
   YELLOW = 5
 }
 
-enum PageSubCategoryEnum {
+export enum PageSubCategoryEnum {
   PAGE_SUB_CATEGORY_NULL = 0,
   USER = 1,
   GAME = 2,
@@ -1322,7 +1322,7 @@ enum PageSubCategoryEnum {
   E_SPORTS = 6
 }
 
-enum PlatformCategoryEnum {
+export enum PlatformCategoryEnum {
   PLATFORM_CATEGORY_NULL = 0,
   CONSOLE = 1,
   ARCADE = 2,
@@ -1332,13 +1332,13 @@ enum PlatformCategoryEnum {
   COMPUTER = 6
 }
 
-enum ReviewCategoryEnum {
+export enum ReviewCategoryEnum {
   REVIEW_CATEGORY_NULL = 0,
   TEXT = 1,
   VIDEO = 2
 }
 
-enum SocialMetricCategoryEnum {
+export enum SocialMetricCategoryEnum {
   SOCIALMETRIC_CATEGORY_NULL = 0,
   FOLLOWS = 1,
   LIKES = 2,
@@ -1349,7 +1349,7 @@ enum SocialMetricCategoryEnum {
   FAVORITES = 7
 }
 
-enum SocialMetricSourceSocialNetworkEnum {
+export enum SocialMetricSourceSocialNetworkEnum {
   SOCIALMETRICSOURCE_SOCIAL_NETWORK_NULL = 0,
   SOCIALMETRICSOURCE_OFFICIAL = 1,
   SOCIALMETRICSOURCE_WIKIA = 2,
@@ -1366,13 +1366,13 @@ enum SocialMetricSourceSocialNetworkEnum {
   SOCIALMETRICSOURCE_REDDIT = 14
 }
 
-enum TestDummyEnumTestEnum {
+export enum TestDummyEnumTestEnum {
   TESTDUMMY_ENUM_TEST_NULL = 0,
   ENUM1 = 1,
   ENUM2 = 2
 }
 
-enum UserRoleEnum {
+export enum UserRoleEnum {
   USER_ROLE_NULL = 0,
   USER_USER = 1,
   USER_ADVANCED_USER = 2,
