@@ -1,6 +1,6 @@
 {
   "name": "@igdb/types",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Typescript definitions for IGDB API",
   "main": "index.d.ts",
   "scripts": {
@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "proto-parse": "0.0.4",
+    "snake-case": "^2.1.0",
     "typescript-interface-generator": "0.0.6"
   }
 }

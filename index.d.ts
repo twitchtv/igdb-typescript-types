@@ -4,7 +4,7 @@ export interface Count {
 
 export interface MultiQueryResult {
   name: string;
-  results: Array<Any>;
+  results: Array<any>;
   count: number;
 }
 
@@ -18,20 +18,20 @@ export interface AchievementResult {
 
 export interface Achievement {
   id: number;
-  achievementIcon: AchievementIcon;
+  achievement_icon: AchievementIcon;
   category: AchievementCategoryEnum;
-  createdAt: number;
+  created_at: number;
   description: string;
-  externalId: string;
+  external_id: string;
   game: Game;
   language: RegionLanguageEnum;
   name: string;
   owners: number;
-  ownersPercentage: number;
+  owners_percentage: number;
   rank: AchievementRankEnum;
   slug: string;
   tags: Array<number>;
-  updatedAt: number;
+  updated_at: number;
 }
 
 export interface AchievementIconResult {
@@ -40,10 +40,10 @@ export interface AchievementIconResult {
 
 export interface AchievementIcon {
   id: number;
-  alphaChannel: boolean;
+  alpha_channel: boolean;
   animated: boolean;
   height: number;
-  imageId: string;
+  image_id: string;
   url: string;
   width: number;
 }
@@ -55,9 +55,9 @@ export interface AgeRatingResult {
 export interface AgeRating {
   id: number;
   category: AgeRatingCategoryEnum;
-  contentDescriptions: Array<AgeRatingContentDescription>;
+  content_descriptions: Array<AgeRatingContentDescription>;
   rating: AgeRatingRatingEnum;
-  ratingCoverUrl: string;
+  rating_cover_url: string;
   synopsis: string;
 }
 
@@ -88,8 +88,8 @@ export interface ApiTokenResult {
 
 export interface ApiToken {
   id: number;
-  createdAt: number;
-  expiresIn: number;
+  created_at: number;
+  expires_in: number;
   token: string;
   user: number;
 }
@@ -100,11 +100,11 @@ export interface ArtworkResult {
 
 export interface Artwork {
   id: number;
-  alphaChannel: boolean;
+  alpha_channel: boolean;
   animated: boolean;
   game: Game;
   height: number;
-  imageId: string;
+  image_id: string;
   url: string;
   width: number;
 }
@@ -116,17 +116,17 @@ export interface CharacterResult {
 export interface Character {
   id: number;
   akas: Array<string>;
-  countryName: string;
-  createdAt: number;
+  country_name: string;
+  created_at: number;
   description: string;
   games: Array<Game>;
   gender: GenderGenderEnum;
-  mugShot: CharacterMugShot;
+  mug_shot: CharacterMugShot;
   name: string;
   people: Array<Person>;
   slug: string;
   species: CharacterSpeciesEnum;
-  updatedAt: number;
+  updated_at: number;
   url: string;
 }
 
@@ -136,10 +136,10 @@ export interface CharacterMugShotResult {
 
 export interface CharacterMugShot {
   id: number;
-  alphaChannel: boolean;
+  alpha_channel: boolean;
   animated: boolean;
   height: number;
-  imageId: string;
+  image_id: string;
   url: string;
   width: number;
 }
@@ -150,11 +150,11 @@ export interface CollectionResult {
 
 export interface Collection {
   id: number;
-  createdAt: number;
+  created_at: number;
   games: Array<Game>;
   name: string;
   slug: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
 }
 
@@ -164,11 +164,11 @@ export interface CompanyResult {
 
 export interface Company {
   id: number;
-  changeDate: number;
-  changeDateCategory: DateFormatStartDateCategoryEnum;
-  changedCompanyId: Company;
+  change_date: number;
+  change_date_category: DateFormatStartDateCategoryEnum;
+  changed_company_id: Company;
   country: number;
-  createdAt: number;
+  created_at: number;
   description: string;
   developed: Array<Game>;
   logo: CompanyLogo;
@@ -176,9 +176,9 @@ export interface Company {
   parent: Company;
   published: Array<Game>;
   slug: string;
-  startDate: number;
-  startDateCategory: DateFormatStartDateCategoryEnum;
-  updatedAt: number;
+  start_date: number;
+  start_date_category: DateFormatStartDateCategoryEnum;
+  updated_at: number;
   url: string;
   websites: Array<CompanyWebsite>;
 }
@@ -189,10 +189,10 @@ export interface CompanyLogoResult {
 
 export interface CompanyLogo {
   id: number;
-  alphaChannel: boolean;
+  alpha_channel: boolean;
   animated: boolean;
   height: number;
-  imageId: string;
+  image_id: string;
   url: string;
   width: number;
 }
@@ -214,11 +214,11 @@ export interface CoverResult {
 
 export interface Cover {
   id: number;
-  alphaChannel: boolean;
+  alpha_channel: boolean;
   animated: boolean;
   game: Game;
   height: number;
-  imageId: string;
+  image_id: string;
   url: string;
   width: number;
 }
@@ -231,17 +231,17 @@ export interface Credit {
   id: number;
   category: CreditCategoryEnum;
   character: Character;
-  characterCreditedName: string;
+  character_credited_name: string;
   comment: string;
   company: Company;
   country: number;
-  createdAt: number;
-  creditedName: string;
+  created_at: number;
+  credited_name: string;
   game: Game;
   person: Person;
-  personTitle: Title;
+  person_title: Title;
   position: number;
-  updatedAt: number;
+  updated_at: number;
 }
 
 export interface ExternalGameResult {
@@ -251,11 +251,11 @@ export interface ExternalGameResult {
 export interface ExternalGame {
   id: number;
   category: ExternalGameCategoryEnum;
-  createdAt: number;
+  created_at: number;
   game: Game;
   name: string;
   uid: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
   year: number;
 }
@@ -268,17 +268,17 @@ export interface Feed {
   id: number;
   category: FeedCategoryEnum;
   content: string;
-  createdAt: number;
-  feedLikesCount: number;
-  feedVideo: GameVideo;
+  created_at: number;
+  feed_likes_count: number;
+  feed_video: GameVideo;
   games: Array<Game>;
   meta: string;
-  publishedAt: number;
+  published_at: number;
   pulse: Pulse;
   slug: string;
   title: string;
   uid: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
   user: number;
 }
@@ -289,10 +289,10 @@ export interface FeedFollowResult {
 
 export interface FeedFollow {
   id: number;
-  createdAt: number;
+  created_at: number;
   feed: FeedCategoryEnum;
-  publishedAt: number;
-  updatedAt: number;
+  published_at: number;
+  updated_at: number;
   user: User;
 }
 
@@ -312,11 +312,11 @@ export interface FranchiseResult {
 
 export interface Franchise {
   id: number;
-  createdAt: number;
+  created_at: number;
   games: Array<Game>;
   name: string;
   slug: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
 }
 
@@ -326,55 +326,55 @@ export interface GameResult {
 
 export interface Game {
   id: number;
-  ageRatings: Array<AgeRating>;
-  aggregatedRating: number;
-  aggregatedRatingCount: number;
-  alternativeNames: Array<AlternativeName>;
+  age_ratings: Array<AgeRating>;
+  aggregated_rating: number;
+  aggregated_rating_count: number;
+  alternative_names: Array<AlternativeName>;
   artworks: Array<Artwork>;
   bundles: Array<Game>;
   category: GameCategoryEnum;
   collection: Collection;
   cover: Cover;
-  createdAt: number;
+  created_at: number;
   dlcs: Array<Game>;
   expansions: Array<Game>;
-  externalGames: Array<ExternalGame>;
-  firstReleaseDate: number;
+  external_games: Array<ExternalGame>;
+  first_release_date: number;
   follows: number;
   franchise: Franchise;
   franchises: Array<Franchise>;
-  gameEngines: Array<GameEngine>;
-  gameModes: Array<GameMode>;
+  game_engines: Array<GameEngine>;
+  game_modes: Array<GameMode>;
   genres: Array<Genre>;
   hypes: number;
-  involvedCompanies: Array<InvolvedCompany>;
+  involved_companies: Array<InvolvedCompany>;
   keywords: Array<Keyword>;
-  multiplayerModes: Array<MultiplayerMode>;
+  multiplayer_modes: Array<MultiplayerMode>;
   name: string;
-  parentGame: Game;
+  parent_game: Game;
   platforms: Array<Platform>;
-  playerPerspectives: Array<PlayerPerspective>;
+  player_perspectives: Array<PlayerPerspective>;
   popularity: number;
-  pulseCount: number;
+  pulse_count: number;
   rating: number;
-  ratingCount: number;
-  releaseDates: Array<ReleaseDate>;
+  rating_count: number;
+  release_dates: Array<ReleaseDate>;
   screenshots: Array<Screenshot>;
-  similarGames: Array<Game>;
+  similar_games: Array<Game>;
   slug: string;
-  standaloneExpansions: Array<Game>;
+  standalone_expansions: Array<Game>;
   status: GameStatusEnum;
   storyline: string;
   summary: string;
   tags: Array<number>;
   themes: Array<Theme>;
-  timeToBeat: TimeToBeat;
-  totalRating: number;
-  totalRatingCount: number;
-  updatedAt: number;
+  time_to_beat: TimeToBeat;
+  total_rating: number;
+  total_rating_count: number;
+  updated_at: number;
   url: string;
-  versionParent: Game;
-  versionTitle: string;
+  version_parent: Game;
+  version_title: string;
   videos: Array<GameVideo>;
   websites: Array<Website>;
 }
@@ -386,13 +386,13 @@ export interface GameEngineResult {
 export interface GameEngine {
   id: number;
   companies: Array<Company>;
-  createdAt: number;
+  created_at: number;
   description: string;
   logo: GameEngineLogo;
   name: string;
   platforms: Array<Platform>;
   slug: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
 }
 
@@ -402,10 +402,10 @@ export interface GameEngineLogoResult {
 
 export interface GameEngineLogo {
   id: number;
-  alphaChannel: boolean;
+  alpha_channel: boolean;
   animated: boolean;
   height: number;
-  imageId: string;
+  image_id: string;
   url: string;
   width: number;
 }
@@ -416,10 +416,10 @@ export interface GameModeResult {
 
 export interface GameMode {
   id: number;
-  createdAt: number;
+  created_at: number;
   name: string;
   slug: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
 }
 
@@ -429,11 +429,11 @@ export interface GameVersionResult {
 
 export interface GameVersion {
   id: number;
-  createdAt: number;
+  created_at: number;
   features: Array<GameVersionFeature>;
   game: Game;
   games: Array<Game>;
-  updatedAt: number;
+  updated_at: number;
   url: string;
 }
 
@@ -457,8 +457,8 @@ export interface GameVersionFeatureValueResult {
 export interface GameVersionFeatureValue {
   id: number;
   game: Game;
-  gameFeature: GameVersionFeature;
-  includedFeature: GameVersionFeatureValueIncludedFeatureEnum;
+  game_feature: GameVersionFeature;
+  included_feature: GameVersionFeatureValueIncludedFeatureEnum;
   note: string;
 }
 
@@ -470,7 +470,7 @@ export interface GameVideo {
   id: number;
   game: Game;
   name: string;
-  videoId: string;
+  video_id: string;
 }
 
 export interface GenreResult {
@@ -479,10 +479,10 @@ export interface GenreResult {
 
 export interface Genre {
   id: number;
-  createdAt: number;
+  created_at: number;
   name: string;
   slug: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
 }
 
@@ -493,13 +493,13 @@ export interface InvolvedCompanyResult {
 export interface InvolvedCompany {
   id: number;
   company: Company;
-  createdAt: number;
+  created_at: number;
   developer: boolean;
   game: Game;
   porting: boolean;
   publisher: boolean;
   supporting: boolean;
-  updatedAt: number;
+  updated_at: number;
 }
 
 export interface KeywordResult {
@@ -508,10 +508,10 @@ export interface KeywordResult {
 
 export interface Keyword {
   id: number;
-  createdAt: number;
+  created_at: number;
   name: string;
   slug: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
 }
 
@@ -521,18 +521,18 @@ export interface ListResult {
 
 export interface List {
   id: number;
-  createdAt: number;
+  created_at: number;
   description: string;
-  entriesCount: number;
-  listEntries: Array<ListEntry>;
-  listTags: Array<number>;
-  listedGames: Array<Game>;
+  entries_count: number;
+  list_entries: Array<ListEntry>;
+  list_tags: Array<number>;
+  listed_games: Array<Game>;
   name: string;
   numbering: boolean;
   private: boolean;
-  similarLists: Array<List>;
+  similar_lists: Array<List>;
   slug: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
   user: User;
 }
@@ -585,17 +585,17 @@ export interface Page {
   color: ColorColorEnum;
   company: Company;
   country: number;
-  createdAt: number;
+  created_at: number;
   description: string;
   feed: Feed;
   game: Game;
   name: string;
   origin: string;
-  pageFollowsCount: number;
-  pageLogo: PageLogo;
+  page_follows_count: number;
+  page_logo: PageLogo;
   slug: string;
-  subCategory: PageSubCategoryEnum;
-  updatedAt: number;
+  sub_category: PageCategoryEnum;
+  updated_at: number;
   uplay: string;
   url: string;
   user: User;
@@ -608,10 +608,10 @@ export interface PageBackgroundResult {
 
 export interface PageBackground {
   id: number;
-  alphaChannel: boolean;
+  alpha_channel: boolean;
   animated: boolean;
   height: number;
-  imageId: string;
+  image_id: string;
   url: string;
   width: number;
 }
@@ -622,10 +622,10 @@ export interface PageLogoResult {
 
 export interface PageLogo {
   id: number;
-  alphaChannel: boolean;
+  alpha_channel: boolean;
   animated: boolean;
   height: number;
-  imageId: string;
+  image_id: string;
   url: string;
   width: number;
 }
@@ -650,20 +650,20 @@ export interface Person {
   bio: string;
   characters: Array<Character>;
   country: number;
-  createdAt: number;
-  creditedGames: Array<Game>;
+  created_at: number;
+  credited_games: Array<Game>;
   description: string;
   dob: number;
   gender: GenderGenderEnum;
-  lovesCount: number;
-  mugShot: PersonMugShot;
+  loves_count: number;
+  mug_shot: PersonMugShot;
   name: string;
   nicknames: Array<string>;
   parent: Person;
   slug: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
-  voiceActed: Array<Game>;
+  voice_acted: Array<Game>;
   websites: Array<PersonWebsite>;
 }
 
@@ -674,7 +674,7 @@ export interface PersonMugShotResult {
 export interface PersonMugShot {
   id: number;
   height: number;
-  imageId: string;
+  image_id: string;
   url: string;
   width: number;
 }
@@ -697,16 +697,16 @@ export interface PlatformResult {
 export interface Platform {
   id: number;
   abbreviation: string;
-  alternativeName: string;
+  alternative_name: string;
   category: PlatformCategoryEnum;
-  createdAt: number;
+  created_at: number;
   generation: number;
   name: string;
-  platformLogo: PlatformLogo;
-  productFamily: ProductFamily;
+  platform_logo: PlatformLogo;
+  product_family: ProductFamily;
   slug: string;
   summary: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
   versions: Array<PlatformVersion>;
   websites: Array<PlatformWebsite>;
@@ -718,10 +718,10 @@ export interface PlatformLogoResult {
 
 export interface PlatformLogo {
   id: number;
-  alphaChannel: boolean;
+  alpha_channel: boolean;
   animated: boolean;
   height: number;
-  imageId: string;
+  image_id: string;
   url: string;
   width: number;
 }
@@ -736,15 +736,15 @@ export interface PlatformVersion {
   connectivity: string;
   cpu: string;
   graphics: string;
-  mainManufacturer: PlatformVersionCompany;
+  main_manufacturer: PlatformVersionCompany;
   media: string;
   memory: string;
   name: string;
   online: string;
   os: string;
   output: string;
-  platformLogo: PlatformLogo;
-  platformVersionReleaseDates: Array<PlatformVersionReleaseDate>;
+  platform_logo: PlatformLogo;
+  platform_version_release_dates: Array<PlatformVersionReleaseDate>;
   resolutions: string;
   slug: string;
   sound: string;
@@ -772,13 +772,13 @@ export interface PlatformVersionReleaseDateResult {
 export interface PlatformVersionReleaseDate {
   id: number;
   category: DateFormatStartDateCategoryEnum;
-  createdAt: number;
+  created_at: number;
   date: number;
   human: string;
   m: number;
-  platformVersion: PlatformVersion;
+  platform_version: PlatformVersion;
   region: RegionLanguageEnum;
-  updatedAt: number;
+  updated_at: number;
   y: number;
 }
 
@@ -799,10 +799,10 @@ export interface PlayerPerspectiveResult {
 
 export interface PlayerPerspective {
   id: number;
-  createdAt: number;
+  created_at: number;
   name: string;
   slug: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
 }
 
@@ -824,17 +824,17 @@ export interface Pulse {
   id: number;
   author: string;
   category: number;
-  createdAt: number;
+  created_at: number;
   ignored: boolean;
   image: string;
-  publishedAt: number;
-  pulseImage: PulseImage;
-  pulseSource: PulseSource;
+  published_at: number;
+  pulse_image: string;
+  pulse_source: PulseSource;
   summary: string;
   tags: Array<number>;
   title: string;
   uid: string;
-  updatedAt: number;
+  updated_at: number;
   videos: Array<string>;
   website: PulseUrl;
 }
@@ -845,13 +845,13 @@ export interface PulseGroupResult {
 
 export interface PulseGroup {
   id: number;
-  createdAt: number;
+  created_at: number;
   game: Game;
   name: string;
-  publishedAt: number;
+  published_at: number;
   pulses: Array<Pulse>;
   tags: Array<number>;
-  updatedAt: number;
+  updated_at: number;
 }
 
 export interface PulseImageResult {
@@ -860,10 +860,10 @@ export interface PulseImageResult {
 
 export interface PulseImage {
   id: number;
-  alphaChannel: boolean;
+  alpha_channel: boolean;
   animated: boolean;
   height: number;
-  imageId: string;
+  image_id: string;
   url: string;
   width: number;
 }
@@ -907,14 +907,14 @@ export interface ReleaseDateResult {
 export interface ReleaseDate {
   id: number;
   category: DateFormatStartDateCategoryEnum;
-  createdAt: number;
+  created_at: number;
   date: number;
   game: Game;
   human: string;
   m: number;
   platform: Platform;
   region: RegionLanguageEnum;
-  updatedAt: number;
+  updated_at: number;
   y: number;
 }
 
@@ -927,19 +927,19 @@ export interface Review {
   category: ReviewCategoryEnum;
   conclusion: string;
   content: string;
-  createdAt: number;
+  created_at: number;
   game: Game;
   introduction: string;
   likes: number;
-  negativePoints: string;
+  negative_points: string;
   platform: Platform;
-  positivePoints: string;
+  positive_points: string;
   slug: string;
   title: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
   user: User;
-  userRating: Rate;
+  user_rating: Rate;
   video: ReviewVideo;
   views: number;
 }
@@ -960,11 +960,11 @@ export interface ScreenshotResult {
 
 export interface Screenshot {
   id: number;
-  alphaChannel: boolean;
+  alpha_channel: boolean;
   animated: boolean;
   game: Game;
   height: number;
-  imageId: string;
+  image_id: string;
   url: string;
   width: number;
 }
@@ -975,7 +975,7 @@ export interface SearchResult {
 
 export interface Search {
   id: number;
-  alternativeName: string;
+  alternative_name: string;
   character: Character;
   collection: Collection;
   company: Company;
@@ -985,8 +985,8 @@ export interface Search {
   person: Person;
   platform: Platform;
   popularity: number;
-  publishedAt: number;
-  testDummy: TestDummy;
+  published_at: number;
+  test_dummy: TestDummy;
   theme: Theme;
 }
 
@@ -997,8 +997,8 @@ export interface SocialMetricResult {
 export interface SocialMetric {
   id: number;
   category: SocialMetricCategoryEnum;
-  createdAt: number;
-  socialMetricSource: SocialMetricSource;
+  created_at: number;
+  social_metric_source: SocialMetricSource;
   value: number;
 }
 
@@ -1010,19 +1010,19 @@ export interface SocialMetricSource {
   id: number;
   category: number;
   channel: string;
-  channelTitle: string;
-  createdAt: number;
+  channel_title: string;
+  created_at: number;
   duration: number;
-  externalId: string;
+  external_id: string;
   game: Game;
-  internalName: string;
+  internal_name: string;
   meta: string;
-  metricTags: Array<string>;
-  publishedAt: number;
-  socialMetrics: Array<SocialMetric>;
-  socialNetwork: SocialMetricSourceSocialNetworkEnum;
+  metric_tags: Array<string>;
+  published_at: number;
+  social_metrics: Array<SocialMetric>;
+  social_network: SocialMetricSourceSocialNetworkEnum;
   title: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
 }
 
@@ -1032,21 +1032,21 @@ export interface TestDummyResult {
 
 export interface TestDummy {
   id: number;
-  boolValue: boolean;
-  createdAt: number;
-  enumTest: TestDummyEnumTestEnum;
-  floatValue: number;
+  bool_value: boolean;
+  created_at: number;
+  enum_test: TestDummyEnumTestEnum;
+  float_value: number;
   game: Game;
-  integerArray: Array<number>;
-  integerValue: number;
+  integer_array: Array<number>;
+  integer_value: number;
   name: string;
-  newIntegerValue: number;
+  new_integer_value: number;
   private: boolean;
   slug: string;
-  stringArray: Array<string>;
-  testDummies: Array<TestDummy>;
-  testDummy: TestDummy;
-  updatedAt: number;
+  string_array: Array<string>;
+  test_dummies: Array<TestDummy>;
+  test_dummy: TestDummy;
+  updated_at: number;
   url: string;
   user: User;
 }
@@ -1057,10 +1057,10 @@ export interface ThemeResult {
 
 export interface Theme {
   id: number;
-  createdAt: number;
+  created_at: number;
   name: string;
   slug: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
 }
 
@@ -1082,12 +1082,12 @@ export interface TitleResult {
 
 export interface Title {
   id: number;
-  createdAt: number;
+  created_at: number;
   description: string;
   games: Array<Game>;
   name: string;
   slug: string;
-  updatedAt: number;
+  updated_at: number;
   url: string;
 }
 
@@ -1099,10 +1099,10 @@ export interface User {
   id: number;
   battlenet: string;
   color: ColorColorEnum;
-  createdAt: number;
+  created_at: number;
   discord: string;
   facebook: string;
-  googlePlus: string;
+  google_plus: string;
   instagram: string;
   linkedin: string;
   origin: string;
@@ -1115,7 +1115,7 @@ export interface User {
   steam: string;
   twitch: string;
   twitter: string;
-  updatedAt: number;
+  updated_at: number;
   uplay: string;
   url: string;
   username: string;

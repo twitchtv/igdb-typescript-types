@@ -1,5 +1,6 @@
 const https = require('https');
 const parse = require('proto-parse');
+const snakeCase = require('snake-case');
 const { createInterfacesFromObject } = require('typescript-interface-generator');
 
 const typeExamples = {
@@ -51,19 +52,19 @@ getProto().then(rawProto => {
         if (c.repeated === true) {
           defaultType = [defaultType];
         }
-        dataType[c.name] = defaultType;
+        dataType[snakeCase(c.name)] = defaultType;
       } else {
         let customType = c.typename;
 
         if (customType === 'bytes') {
-          customType = 'Any';
+          customType = 'any';
         }
 
         if (c.repeated === true) {
           customType = `Array<${customType}>`;
         }
-        referenceTypes[c.name] = customType;
-        dataType[c.name] = undefined;
+        referenceTypes[snakeCase(c.name)] = customType;
+        dataType[snakeCase(c.name)] = undefined;
       }
     });
 
