@@ -30,9 +30,9 @@ const getProto = () => new Promise((accept, reject) => {
   });
 });
 
-const replaceUndefined = (string, key, value) => {
+const replaceUndefined = (string, key, value, number) => {
   const regex = new RegExp(`${key}: (undefined);`, "g");
-  return string.replace(regex, `${key}: ${value};`);
+  return string.replace(regex, `${key}: ${value}${number ? ' | number' : ''};`);
 };
 
 getProto().then(rawProto => {
@@ -70,7 +70,11 @@ getProto().then(rawProto => {
 
     let definitionString = createInterfacesFromObject(message.name, dataType);
     Object.keys(referenceTypes).forEach(key => {
-      definitionString = replaceUndefined(definitionString, key, referenceTypes[key]);
+      const value = referenceTypes[key];
+      const canBeNumber = !value.includes('Array<') &&
+        !Object.keys(typeExamples).includes(value) &&
+        !value.includes('Enum');
+      definitionString = replaceUndefined(definitionString, key, value, canBeNumber);
     });
 
     dataContainer.push(`export ${definitionString}`);
