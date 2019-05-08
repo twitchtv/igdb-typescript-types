@@ -30,9 +30,9 @@ const getProto = () => new Promise((accept, reject) => {
   });
 });
 
-const replaceUndefined = (string, key, value, number) => {
+const replaceUndefined = (string, key, value, postfix = '') => {
   const regex = new RegExp(`${key}: (undefined);`, "g");
-  return string.replace(regex, `${key}?: ${value}${number ? ' | number' : ''};`);
+  return string.replace(regex, `${key}?: ${value}${postfix};`);
 };
 
 getProto().then(rawProto => {
@@ -71,10 +71,15 @@ getProto().then(rawProto => {
     let definitionString = createInterfacesFromObject(message.name, dataType);
     Object.keys(referenceTypes).forEach(key => {
       const value = referenceTypes[key];
-      const canBeNumber = !value.includes('Array<') &&
-        !Object.keys(typeExamples).includes(value) &&
-        !value.includes('Enum');
-      definitionString = replaceUndefined(definitionString, key, value, canBeNumber);
+      if (!Object.keys(typeExamples).includes(value) && !value.includes('Enum')) {
+        if (value.includes('Array<')) {
+          definitionString = replaceUndefined(definitionString, key, value, ' | number[]');
+        } else {
+          definitionString = replaceUndefined(definitionString, key, value, ' | number');
+        }
+      } else {
+        definitionString = replaceUndefined(definitionString, key, value);
+      }
     });
 
     dataContainer.push(`export ${definitionString}`);

@@ -4,16 +4,16 @@ export interface Count {
 
 export interface MultiQueryResult {
   name?: string;
-  results?: Array<any>;
+  results?: Array<any> | number[];
   count?: number;
 }
 
 export interface MultiQueryResultArray {
-  result?: Array<MultiQueryResult>;
+  result?: Array<MultiQueryResult> | number[];
 }
 
 export interface AchievementResult {
-  achievements?: Array<Achievement>;
+  achievements?: Array<Achievement> | number[];
 }
 
 export interface Achievement {
@@ -35,7 +35,7 @@ export interface Achievement {
 }
 
 export interface AchievementIconResult {
-  achievementicons?: Array<AchievementIcon>;
+  achievementicons?: Array<AchievementIcon> | number[];
 }
 
 export interface AchievementIcon {
@@ -49,20 +49,20 @@ export interface AchievementIcon {
 }
 
 export interface AgeRatingResult {
-  ageratings?: Array<AgeRating>;
+  ageratings?: Array<AgeRating> | number[];
 }
 
 export interface AgeRating {
   id?: number;
   category?: AgeRatingCategoryEnum;
-  content_descriptions?: Array<AgeRatingContentDescription>;
+  content_descriptions?: Array<AgeRatingContentDescription> | number[];
   rating?: AgeRatingRatingEnum;
   rating_cover_url?: string;
   synopsis?: string;
 }
 
 export interface AgeRatingContentDescriptionResult {
-  ageratingcontentdescriptions?: Array<AgeRatingContentDescription>;
+  ageratingcontentdescriptions?: Array<AgeRatingContentDescription> | number[];
 }
 
 export interface AgeRatingContentDescription {
@@ -72,7 +72,7 @@ export interface AgeRatingContentDescription {
 }
 
 export interface AlternativeNameResult {
-  alternativenames?: Array<AlternativeName>;
+  alternativenames?: Array<AlternativeName> | number[];
 }
 
 export interface AlternativeName {
@@ -83,7 +83,7 @@ export interface AlternativeName {
 }
 
 export interface ApiTokenResult {
-  apitokens?: Array<ApiToken>;
+  apitokens?: Array<ApiToken> | number[];
 }
 
 export interface ApiToken {
@@ -95,7 +95,7 @@ export interface ApiToken {
 }
 
 export interface ArtworkResult {
-  artworks?: Array<Artwork>;
+  artworks?: Array<Artwork> | number[];
 }
 
 export interface Artwork {
@@ -110,20 +110,20 @@ export interface Artwork {
 }
 
 export interface CharacterResult {
-  characters?: Array<Character>;
+  characters?: Array<Character> | number[];
 }
 
 export interface Character {
   id?: number;
-  akas?: Array<string>;
+  akas?: Array<string> | number[];
   country_name?: string;
   created_at?: number;
   description?: string;
-  games?: Array<Game>;
+  games?: Array<Game> | number[];
   gender?: GenderGenderEnum;
   mug_shot?: CharacterMugShot | number;
   name?: string;
-  people?: Array<Person>;
+  people?: Array<Person> | number[];
   slug?: string;
   species?: CharacterSpeciesEnum;
   updated_at?: number;
@@ -131,7 +131,7 @@ export interface Character {
 }
 
 export interface CharacterMugShotResult {
-  charactermugshots?: Array<CharacterMugShot>;
+  charactermugshots?: Array<CharacterMugShot> | number[];
 }
 
 export interface CharacterMugShot {
@@ -145,13 +145,13 @@ export interface CharacterMugShot {
 }
 
 export interface CollectionResult {
-  collections?: Array<Collection>;
+  collections?: Array<Collection> | number[];
 }
 
 export interface Collection {
   id?: number;
   created_at?: number;
-  games?: Array<Game>;
+  games?: Array<Game> | number[];
   name?: string;
   slug?: string;
   updated_at?: number;
@@ -159,7 +159,7 @@ export interface Collection {
 }
 
 export interface CompanyResult {
-  companies?: Array<Company>;
+  companies?: Array<Company> | number[];
 }
 
 export interface Company {
@@ -170,21 +170,21 @@ export interface Company {
   country?: number;
   created_at?: number;
   description?: string;
-  developed?: Array<Game>;
+  developed?: Array<Game> | number[];
   logo?: CompanyLogo | number;
   name?: string;
   parent?: Company | number;
-  published?: Array<Game>;
+  published?: Array<Game> | number[];
   slug?: string;
   start_date?: number;
   start_date_category?: DateFormatStartDateCategoryEnum;
   updated_at?: number;
   url?: string;
-  websites?: Array<CompanyWebsite>;
+  websites?: Array<CompanyWebsite> | number[];
 }
 
 export interface CompanyLogoResult {
-  companylogos?: Array<CompanyLogo>;
+  companylogos?: Array<CompanyLogo> | number[];
 }
 
 export interface CompanyLogo {
@@ -198,7 +198,7 @@ export interface CompanyLogo {
 }
 
 export interface CompanyWebsiteResult {
-  companywebsites?: Array<CompanyWebsite>;
+  companywebsites?: Array<CompanyWebsite> | number[];
 }
 
 export interface CompanyWebsite {
@@ -209,7 +209,7 @@ export interface CompanyWebsite {
 }
 
 export interface CoverResult {
-  covers?: Array<Cover>;
+  covers?: Array<Cover> | number[];
 }
 
 export interface Cover {
@@ -224,7 +224,7 @@ export interface Cover {
 }
 
 export interface CreditResult {
-  credits?: Array<Credit>;
+  credits?: Array<Credit> | number[];
 }
 
 export interface Credit {
@@ -245,7 +245,7 @@ export interface Credit {
 }
 
 export interface ExternalGameResult {
-  externalgames?: Array<ExternalGame>;
+  externalgames?: Array<ExternalGame> | number[];
 }
 
 export interface ExternalGame {
@@ -261,7 +261,7 @@ export interface ExternalGame {
 }
 
 export interface FeedResult {
-  feeds?: Array<Feed>;
+  feeds?: Array<Feed> | number[];
 }
 
 export interface Feed {
@@ -271,7 +271,7 @@ export interface Feed {
   created_at?: number;
   feed_likes_count?: number;
   feed_video?: GameVideo | number;
-  games?: Array<Game>;
+  games?: Array<Game> | number[];
   meta?: string;
   published_at?: number;
   pulse?: Pulse | number;
@@ -284,7 +284,7 @@ export interface Feed {
 }
 
 export interface FeedFollowResult {
-  feedfollows?: Array<FeedFollow>;
+  feedfollows?: Array<FeedFollow> | number[];
 }
 
 export interface FeedFollow {
@@ -297,7 +297,7 @@ export interface FeedFollow {
 }
 
 export interface FollowResult {
-  follows?: Array<Follow>;
+  follows?: Array<Follow> | number[];
 }
 
 export interface Follow {
@@ -307,13 +307,13 @@ export interface Follow {
 }
 
 export interface FranchiseResult {
-  franchises?: Array<Franchise>;
+  franchises?: Array<Franchise> | number[];
 }
 
 export interface Franchise {
   id?: number;
   created_at?: number;
-  games?: Array<Game>;
+  games?: Array<Game> | number[];
   name?: string;
   slug?: string;
   updated_at?: number;
@@ -321,53 +321,53 @@ export interface Franchise {
 }
 
 export interface GameResult {
-  games?: Array<Game>;
+  games?: Array<Game> | number[];
 }
 
 export interface Game {
   id?: number;
-  age_ratings?: Array<AgeRating>;
+  age_ratings?: Array<AgeRating> | number[];
   aggregated_rating?: number;
   aggregated_rating_count?: number;
-  alternative_names?: Array<AlternativeName>;
-  artworks?: Array<Artwork>;
-  bundles?: Array<Game>;
+  alternative_names?: Array<AlternativeName> | number[];
+  artworks?: Array<Artwork> | number[];
+  bundles?: Array<Game> | number[];
   category?: GameCategoryEnum;
   collection?: Collection | number;
   cover?: Cover | number;
   created_at?: number;
-  dlcs?: Array<Game>;
-  expansions?: Array<Game>;
-  external_games?: Array<ExternalGame>;
+  dlcs?: Array<Game> | number[];
+  expansions?: Array<Game> | number[];
+  external_games?: Array<ExternalGame> | number[];
   first_release_date?: number;
   follows?: number;
   franchise?: Franchise | number;
-  franchises?: Array<Franchise>;
-  game_engines?: Array<GameEngine>;
-  game_modes?: Array<GameMode>;
-  genres?: Array<Genre>;
+  franchises?: Array<Franchise> | number[];
+  game_engines?: Array<GameEngine> | number[];
+  game_modes?: Array<GameMode> | number[];
+  genres?: Array<Genre> | number[];
   hypes?: number;
-  involved_companies?: Array<InvolvedCompany>;
-  keywords?: Array<Keyword>;
-  multiplayer_modes?: Array<MultiplayerMode>;
+  involved_companies?: Array<InvolvedCompany> | number[];
+  keywords?: Array<Keyword> | number[];
+  multiplayer_modes?: Array<MultiplayerMode> | number[];
   name?: string;
   parent_game?: Game | number;
-  platforms?: Array<Platform>;
-  player_perspectives?: Array<PlayerPerspective>;
+  platforms?: Array<Platform> | number[];
+  player_perspectives?: Array<PlayerPerspective> | number[];
   popularity?: number;
   pulse_count?: number;
   rating?: number;
   rating_count?: number;
-  release_dates?: Array<ReleaseDate>;
-  screenshots?: Array<Screenshot>;
-  similar_games?: Array<Game>;
+  release_dates?: Array<ReleaseDate> | number[];
+  screenshots?: Array<Screenshot> | number[];
+  similar_games?: Array<Game> | number[];
   slug?: string;
-  standalone_expansions?: Array<Game>;
+  standalone_expansions?: Array<Game> | number[];
   status?: GameStatusEnum;
   storyline?: string;
   summary?: string;
   tags?: Array<number>;
-  themes?: Array<Theme>;
+  themes?: Array<Theme> | number[];
   time_to_beat?: TimeToBeat | number;
   total_rating?: number;
   total_rating_count?: number;
@@ -375,29 +375,29 @@ export interface Game {
   url?: string;
   version_parent?: Game | number;
   version_title?: string;
-  videos?: Array<GameVideo>;
-  websites?: Array<Website>;
+  videos?: Array<GameVideo> | number[];
+  websites?: Array<Website> | number[];
 }
 
 export interface GameEngineResult {
-  gameengines?: Array<GameEngine>;
+  gameengines?: Array<GameEngine> | number[];
 }
 
 export interface GameEngine {
   id?: number;
-  companies?: Array<Company>;
+  companies?: Array<Company> | number[];
   created_at?: number;
   description?: string;
   logo?: GameEngineLogo | number;
   name?: string;
-  platforms?: Array<Platform>;
+  platforms?: Array<Platform> | number[];
   slug?: string;
   updated_at?: number;
   url?: string;
 }
 
 export interface GameEngineLogoResult {
-  gameenginelogos?: Array<GameEngineLogo>;
+  gameenginelogos?: Array<GameEngineLogo> | number[];
 }
 
 export interface GameEngineLogo {
@@ -411,7 +411,7 @@ export interface GameEngineLogo {
 }
 
 export interface GameModeResult {
-  gamemodes?: Array<GameMode>;
+  gamemodes?: Array<GameMode> | number[];
 }
 
 export interface GameMode {
@@ -424,21 +424,21 @@ export interface GameMode {
 }
 
 export interface GameVersionResult {
-  gameversions?: Array<GameVersion>;
+  gameversions?: Array<GameVersion> | number[];
 }
 
 export interface GameVersion {
   id?: number;
   created_at?: number;
-  features?: Array<GameVersionFeature>;
+  features?: Array<GameVersionFeature> | number[];
   game?: Game | number;
-  games?: Array<Game>;
+  games?: Array<Game> | number[];
   updated_at?: number;
   url?: string;
 }
 
 export interface GameVersionFeatureResult {
-  gameversionfeatures?: Array<GameVersionFeature>;
+  gameversionfeatures?: Array<GameVersionFeature> | number[];
 }
 
 export interface GameVersionFeature {
@@ -447,11 +447,11 @@ export interface GameVersionFeature {
   description?: string;
   position?: number;
   title?: string;
-  values?: Array<GameVersionFeatureValue>;
+  values?: Array<GameVersionFeatureValue> | number[];
 }
 
 export interface GameVersionFeatureValueResult {
-  gameversionfeaturevalues?: Array<GameVersionFeatureValue>;
+  gameversionfeaturevalues?: Array<GameVersionFeatureValue> | number[];
 }
 
 export interface GameVersionFeatureValue {
@@ -463,7 +463,7 @@ export interface GameVersionFeatureValue {
 }
 
 export interface GameVideoResult {
-  gamevideos?: Array<GameVideo>;
+  gamevideos?: Array<GameVideo> | number[];
 }
 
 export interface GameVideo {
@@ -474,7 +474,7 @@ export interface GameVideo {
 }
 
 export interface GenreResult {
-  genres?: Array<Genre>;
+  genres?: Array<Genre> | number[];
 }
 
 export interface Genre {
@@ -487,7 +487,7 @@ export interface Genre {
 }
 
 export interface InvolvedCompanyResult {
-  involvedcompanies?: Array<InvolvedCompany>;
+  involvedcompanies?: Array<InvolvedCompany> | number[];
 }
 
 export interface InvolvedCompany {
@@ -503,7 +503,7 @@ export interface InvolvedCompany {
 }
 
 export interface KeywordResult {
-  keywords?: Array<Keyword>;
+  keywords?: Array<Keyword> | number[];
 }
 
 export interface Keyword {
@@ -516,7 +516,7 @@ export interface Keyword {
 }
 
 export interface ListResult {
-  lists?: Array<List>;
+  lists?: Array<List> | number[];
 }
 
 export interface List {
@@ -524,13 +524,13 @@ export interface List {
   created_at?: number;
   description?: string;
   entries_count?: number;
-  list_entries?: Array<ListEntry>;
+  list_entries?: Array<ListEntry> | number[];
   list_tags?: Array<number>;
-  listed_games?: Array<Game>;
+  listed_games?: Array<Game> | number[];
   name?: string;
   numbering?: boolean;
   private?: boolean;
-  similar_lists?: Array<List>;
+  similar_lists?: Array<List> | number[];
   slug?: string;
   updated_at?: number;
   url?: string;
@@ -538,7 +538,7 @@ export interface List {
 }
 
 export interface ListEntryResult {
-  listentries?: Array<ListEntry>;
+  listentries?: Array<ListEntry> | number[];
 }
 
 export interface ListEntry {
@@ -553,7 +553,7 @@ export interface ListEntry {
 }
 
 export interface MultiplayerModeResult {
-  multiplayermodes?: Array<MultiplayerMode>;
+  multiplayermodes?: Array<MultiplayerMode> | number[];
 }
 
 export interface MultiplayerMode {
@@ -574,7 +574,7 @@ export interface MultiplayerMode {
 }
 
 export interface PageResult {
-  pages?: Array<Page>;
+  pages?: Array<Page> | number[];
 }
 
 export interface Page {
@@ -599,11 +599,11 @@ export interface Page {
   uplay?: string;
   url?: string;
   user?: User | number;
-  websites?: Array<PageWebsite>;
+  websites?: Array<PageWebsite> | number[];
 }
 
 export interface PageBackgroundResult {
-  pagebackgrounds?: Array<PageBackground>;
+  pagebackgrounds?: Array<PageBackground> | number[];
 }
 
 export interface PageBackground {
@@ -617,7 +617,7 @@ export interface PageBackground {
 }
 
 export interface PageLogoResult {
-  pagelogos?: Array<PageLogo>;
+  pagelogos?: Array<PageLogo> | number[];
 }
 
 export interface PageLogo {
@@ -631,7 +631,7 @@ export interface PageLogo {
 }
 
 export interface PageWebsiteResult {
-  pagewebsites?: Array<PageWebsite>;
+  pagewebsites?: Array<PageWebsite> | number[];
 }
 
 export interface PageWebsite {
@@ -642,33 +642,33 @@ export interface PageWebsite {
 }
 
 export interface PersonResult {
-  people?: Array<Person>;
+  people?: Array<Person> | number[];
 }
 
 export interface Person {
   id?: number;
   bio?: string;
-  characters?: Array<Character>;
+  characters?: Array<Character> | number[];
   country?: number;
   created_at?: number;
-  credited_games?: Array<Game>;
+  credited_games?: Array<Game> | number[];
   description?: string;
   dob?: number;
   gender?: GenderGenderEnum;
   loves_count?: number;
   mug_shot?: PersonMugShot | number;
   name?: string;
-  nicknames?: Array<string>;
+  nicknames?: Array<string> | number[];
   parent?: Person | number;
   slug?: string;
   updated_at?: number;
   url?: string;
-  voice_acted?: Array<Game>;
-  websites?: Array<PersonWebsite>;
+  voice_acted?: Array<Game> | number[];
+  websites?: Array<PersonWebsite> | number[];
 }
 
 export interface PersonMugShotResult {
-  personmugshots?: Array<PersonMugShot>;
+  personmugshots?: Array<PersonMugShot> | number[];
 }
 
 export interface PersonMugShot {
@@ -680,7 +680,7 @@ export interface PersonMugShot {
 }
 
 export interface PersonWebsiteResult {
-  personwebsites?: Array<PersonWebsite>;
+  personwebsites?: Array<PersonWebsite> | number[];
 }
 
 export interface PersonWebsite {
@@ -691,7 +691,7 @@ export interface PersonWebsite {
 }
 
 export interface PlatformResult {
-  platforms?: Array<Platform>;
+  platforms?: Array<Platform> | number[];
 }
 
 export interface Platform {
@@ -708,12 +708,12 @@ export interface Platform {
   summary?: string;
   updated_at?: number;
   url?: string;
-  versions?: Array<PlatformVersion>;
-  websites?: Array<PlatformWebsite>;
+  versions?: Array<PlatformVersion> | number[];
+  websites?: Array<PlatformWebsite> | number[];
 }
 
 export interface PlatformLogoResult {
-  platformlogos?: Array<PlatformLogo>;
+  platformlogos?: Array<PlatformLogo> | number[];
 }
 
 export interface PlatformLogo {
@@ -727,12 +727,12 @@ export interface PlatformLogo {
 }
 
 export interface PlatformVersionResult {
-  platformversions?: Array<PlatformVersion>;
+  platformversions?: Array<PlatformVersion> | number[];
 }
 
 export interface PlatformVersion {
   id?: number;
-  companies?: Array<PlatformVersionCompany>;
+  companies?: Array<PlatformVersionCompany> | number[];
   connectivity?: string;
   cpu?: string;
   graphics?: string;
@@ -744,7 +744,7 @@ export interface PlatformVersion {
   os?: string;
   output?: string;
   platform_logo?: PlatformLogo | number;
-  platform_version_release_dates?: Array<PlatformVersionReleaseDate>;
+  platform_version_release_dates?: Array<PlatformVersionReleaseDate> | number[];
   resolutions?: string;
   slug?: string;
   sound?: string;
@@ -754,7 +754,7 @@ export interface PlatformVersion {
 }
 
 export interface PlatformVersionCompanyResult {
-  platformversioncompanies?: Array<PlatformVersionCompany>;
+  platformversioncompanies?: Array<PlatformVersionCompany> | number[];
 }
 
 export interface PlatformVersionCompany {
@@ -766,7 +766,7 @@ export interface PlatformVersionCompany {
 }
 
 export interface PlatformVersionReleaseDateResult {
-  platformversionreleasedates?: Array<PlatformVersionReleaseDate>;
+  platformversionreleasedates?: Array<PlatformVersionReleaseDate> | number[];
 }
 
 export interface PlatformVersionReleaseDate {
@@ -783,7 +783,7 @@ export interface PlatformVersionReleaseDate {
 }
 
 export interface PlatformWebsiteResult {
-  platformwebsites?: Array<PlatformWebsite>;
+  platformwebsites?: Array<PlatformWebsite> | number[];
 }
 
 export interface PlatformWebsite {
@@ -794,7 +794,7 @@ export interface PlatformWebsite {
 }
 
 export interface PlayerPerspectiveResult {
-  playerperspectives?: Array<PlayerPerspective>;
+  playerperspectives?: Array<PlayerPerspective> | number[];
 }
 
 export interface PlayerPerspective {
@@ -807,7 +807,7 @@ export interface PlayerPerspective {
 }
 
 export interface ProductFamilyResult {
-  productfamilies?: Array<ProductFamily>;
+  productfamilies?: Array<ProductFamily> | number[];
 }
 
 export interface ProductFamily {
@@ -817,7 +817,7 @@ export interface ProductFamily {
 }
 
 export interface PulseResult {
-  pulses?: Array<Pulse>;
+  pulses?: Array<Pulse> | number[];
 }
 
 export interface Pulse {
@@ -835,12 +835,12 @@ export interface Pulse {
   title?: string;
   uid?: string;
   updated_at?: number;
-  videos?: Array<string>;
+  videos?: Array<string> | number[];
   website?: PulseUrl | number;
 }
 
 export interface PulseGroupResult {
-  pulsegroups?: Array<PulseGroup>;
+  pulsegroups?: Array<PulseGroup> | number[];
 }
 
 export interface PulseGroup {
@@ -849,13 +849,13 @@ export interface PulseGroup {
   game?: Game | number;
   name?: string;
   published_at?: number;
-  pulses?: Array<Pulse>;
+  pulses?: Array<Pulse> | number[];
   tags?: Array<number>;
   updated_at?: number;
 }
 
 export interface PulseImageResult {
-  pulseimages?: Array<PulseImage>;
+  pulseimages?: Array<PulseImage> | number[];
 }
 
 export interface PulseImage {
@@ -869,7 +869,7 @@ export interface PulseImage {
 }
 
 export interface PulseSourceResult {
-  pulsesources?: Array<PulseSource>;
+  pulsesources?: Array<PulseSource> | number[];
 }
 
 export interface PulseSource {
@@ -880,7 +880,7 @@ export interface PulseSource {
 }
 
 export interface PulseUrlResult {
-  pulseurls?: Array<PulseUrl>;
+  pulseurls?: Array<PulseUrl> | number[];
 }
 
 export interface PulseUrl {
@@ -890,7 +890,7 @@ export interface PulseUrl {
 }
 
 export interface RateResult {
-  rates?: Array<Rate>;
+  rates?: Array<Rate> | number[];
 }
 
 export interface Rate {
@@ -901,7 +901,7 @@ export interface Rate {
 }
 
 export interface ReleaseDateResult {
-  releasedates?: Array<ReleaseDate>;
+  releasedates?: Array<ReleaseDate> | number[];
 }
 
 export interface ReleaseDate {
@@ -919,7 +919,7 @@ export interface ReleaseDate {
 }
 
 export interface ReviewResult {
-  reviews?: Array<Review>;
+  reviews?: Array<Review> | number[];
 }
 
 export interface Review {
@@ -945,7 +945,7 @@ export interface Review {
 }
 
 export interface ReviewVideoResult {
-  reviewvideos?: Array<ReviewVideo>;
+  reviewvideos?: Array<ReviewVideo> | number[];
 }
 
 export interface ReviewVideo {
@@ -955,7 +955,7 @@ export interface ReviewVideo {
 }
 
 export interface ScreenshotResult {
-  screenshots?: Array<Screenshot>;
+  screenshots?: Array<Screenshot> | number[];
 }
 
 export interface Screenshot {
@@ -970,7 +970,7 @@ export interface Screenshot {
 }
 
 export interface SearchResult {
-  searches?: Array<Search>;
+  searches?: Array<Search> | number[];
 }
 
 export interface Search {
@@ -991,7 +991,7 @@ export interface Search {
 }
 
 export interface SocialMetricResult {
-  socialmetrics?: Array<SocialMetric>;
+  socialmetrics?: Array<SocialMetric> | number[];
 }
 
 export interface SocialMetric {
@@ -1003,7 +1003,7 @@ export interface SocialMetric {
 }
 
 export interface SocialMetricSourceResult {
-  socialmetricsources?: Array<SocialMetricSource>;
+  socialmetricsources?: Array<SocialMetricSource> | number[];
 }
 
 export interface SocialMetricSource {
@@ -1017,9 +1017,9 @@ export interface SocialMetricSource {
   game?: Game | number;
   internal_name?: string;
   meta?: string;
-  metric_tags?: Array<string>;
+  metric_tags?: Array<string> | number[];
   published_at?: number;
-  social_metrics?: Array<SocialMetric>;
+  social_metrics?: Array<SocialMetric> | number[];
   social_network?: SocialMetricSourceSocialNetworkEnum;
   title?: string;
   updated_at?: number;
@@ -1027,7 +1027,7 @@ export interface SocialMetricSource {
 }
 
 export interface TestDummyResult {
-  testdummies?: Array<TestDummy>;
+  testdummies?: Array<TestDummy> | number[];
 }
 
 export interface TestDummy {
@@ -1043,8 +1043,8 @@ export interface TestDummy {
   new_integer_value?: number;
   private?: boolean;
   slug?: string;
-  string_array?: Array<string>;
-  test_dummies?: Array<TestDummy>;
+  string_array?: Array<string> | number[];
+  test_dummies?: Array<TestDummy> | number[];
   test_dummy?: TestDummy | number;
   updated_at?: number;
   url?: string;
@@ -1052,7 +1052,7 @@ export interface TestDummy {
 }
 
 export interface ThemeResult {
-  themes?: Array<Theme>;
+  themes?: Array<Theme> | number[];
 }
 
 export interface Theme {
@@ -1065,7 +1065,7 @@ export interface Theme {
 }
 
 export interface TimeToBeatResult {
-  timetobeats?: Array<TimeToBeat>;
+  timetobeats?: Array<TimeToBeat> | number[];
 }
 
 export interface TimeToBeat {
@@ -1077,14 +1077,14 @@ export interface TimeToBeat {
 }
 
 export interface TitleResult {
-  titles?: Array<Title>;
+  titles?: Array<Title> | number[];
 }
 
 export interface Title {
   id?: number;
   created_at?: number;
   description?: string;
-  games?: Array<Game>;
+  games?: Array<Game> | number[];
   name?: string;
   slug?: string;
   updated_at?: number;
@@ -1092,7 +1092,7 @@ export interface Title {
 }
 
 export interface UserResult {
-  users?: Array<User>;
+  users?: Array<User> | number[];
 }
 
 export interface User {
@@ -1123,7 +1123,7 @@ export interface User {
 }
 
 export interface WebsiteResult {
-  websites?: Array<Website>;
+  websites?: Array<Website> | number[];
 }
 
 export interface Website {
