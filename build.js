@@ -31,8 +31,8 @@ const getProto = () => new Promise((accept, reject) => {
 });
 
 const replaceUndefined = (string, key, value, postfix = '') => {
-  const regex = new RegExp(`${key}: (undefined);`, "g");
-  return string.replace(regex, `${key}?: ${value}${postfix};`);
+  const regex = new RegExp(`\\s${key}: (undefined);$`, "gm");
+  return string.replace(regex, ` ${key}?: ${value}${postfix};`);
 };
 
 getProto().then(rawProto => {
@@ -40,7 +40,7 @@ getProto().then(rawProto => {
   const messages = data.content.filter(i => i.type === 'message').filter(i => i.name);
   const enums = data.content.filter(i => i.type === 'enum');
   const dataContainer = [];
-
+  
   messages.forEach(message => {
     const dataType = {};
     const referenceTypes = {};

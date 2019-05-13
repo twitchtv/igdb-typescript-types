@@ -594,7 +594,7 @@ export interface Page {
   page_follows_count?: number;
   page_logo?: PageLogo | number;
   slug?: string;
-  sub_category?: PageCategoryEnum;
+  sub_category?: PageSubCategoryEnum;
   updated_at?: number;
   uplay?: string;
   url?: string;
@@ -828,7 +828,7 @@ export interface Pulse {
   ignored?: boolean;
   image?: string;
   published_at?: number;
-  pulse_image?: string;
+  pulse_image?: PulseImage | number;
   pulse_source?: PulseSource | number;
   summary?: string;
   tags?: Array<number>;
