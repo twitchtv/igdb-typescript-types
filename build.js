@@ -32,7 +32,8 @@ const getProto = () => new Promise((accept, reject) => {
 
 const replaceUndefined = (string, key, value, postfix = '') => {
   const regex = new RegExp(`\\s${key}: (undefined);$`, "gm");
-  return string.replace(regex, ` ${key}?: ${value}${postfix};`);
+  const optional = key === 'id' ? '' : '?';
+  return string.replace(regex, ` ${key}${optional}: ${value}${postfix};`);
 };
 
 getProto().then(rawProto => {
@@ -52,7 +53,9 @@ getProto().then(rawProto => {
         if (c.repeated === true) {
           defaultType = [defaultType];
         }
-        dataType[snakeCase(c.name) + '?'] = defaultType;
+        const key = snakeCase(c.name);
+        const optional = key === 'id' ? '' : '?';
+        dataType[key + optional] = defaultType;
       } else {
         let customType = c.typename;
 
