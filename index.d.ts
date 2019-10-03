@@ -1,22 +1,38 @@
-export interface Count {
+/** ApiObject Type, id and other key:value pairs */
+export interface ApiObject {
+  id: number;
+  [keys: string]: ApiObjectProperty;
+}
+
+/** Possible types of an ApiObject's properties */
+export type ApiObjectProperty =
+  | ApiObject[]
+  | ApiObject
+  | number[]
+  | number
+  | string
+  | string[]
+  | boolean;
+
+export interface Count extends ApiObject {
   count?: number;
 }
 
-export interface MultiQueryResult {
+export interface MultiQueryResult extends ApiObject {
   name?: string;
   results?: Array<any> | number[];
   count?: number;
 }
 
-export interface MultiQueryResultArray {
+export interface MultiQueryResultArray extends ApiObject {
   result?: Array<MultiQueryResult> | number[];
 }
 
-export interface AchievementResult {
+export interface AchievementResult extends ApiObject {
   achievements?: Array<Achievement> | number[];
 }
 
-export interface Achievement {
+export interface Achievement extends ApiObject {
   id: number;
   achievement_icon?: AchievementIcon | number;
   category?: AchievementCategoryEnum;
@@ -35,11 +51,11 @@ export interface Achievement {
   updated_at?: number;
 }
 
-export interface AchievementIconResult {
+export interface AchievementIconResult extends ApiObject {
   achievementicons?: Array<AchievementIcon> | number[];
 }
 
-export interface AchievementIcon {
+export interface AchievementIcon extends ApiObject {
   id: number;
   alpha_channel?: boolean;
   animated?: boolean;
@@ -49,11 +65,11 @@ export interface AchievementIcon {
   width?: number;
 }
 
-export interface AgeRatingResult {
+export interface AgeRatingResult extends ApiObject {
   ageratings?: Array<AgeRating> | number[];
 }
 
-export interface AgeRating {
+export interface AgeRating extends ApiObject {
   id: number;
   category?: AgeRatingCategoryEnum;
   content_descriptions?: Array<AgeRatingContentDescription> | number[];
@@ -62,32 +78,32 @@ export interface AgeRating {
   synopsis?: string;
 }
 
-export interface AgeRatingContentDescriptionResult {
+export interface AgeRatingContentDescriptionResult extends ApiObject {
   ageratingcontentdescriptions?: Array<AgeRatingContentDescription> | number[];
 }
 
-export interface AgeRatingContentDescription {
+export interface AgeRatingContentDescription extends ApiObject {
   id: number;
   category?: AgeRatingRatingEnum;
   description?: string;
 }
 
-export interface AlternativeNameResult {
+export interface AlternativeNameResult extends ApiObject {
   alternativenames?: Array<AlternativeName> | number[];
 }
 
-export interface AlternativeName {
+export interface AlternativeName extends ApiObject {
   id: number;
   comment?: string;
   game?: Game | number;
   name?: string;
 }
 
-export interface ApiTokenResult {
+export interface ApiTokenResult extends ApiObject {
   apitokens?: Array<ApiToken> | number[];
 }
 
-export interface ApiToken {
+export interface ApiToken extends ApiObject {
   id: number;
   created_at?: number;
   expires_in?: number;
@@ -95,11 +111,11 @@ export interface ApiToken {
   user?: number;
 }
 
-export interface ArtworkResult {
+export interface ArtworkResult extends ApiObject {
   artworks?: Array<Artwork> | number[];
 }
 
-export interface Artwork {
+export interface Artwork extends ApiObject {
   id: number;
   alpha_channel?: boolean;
   animated?: boolean;
@@ -110,11 +126,11 @@ export interface Artwork {
   width?: number;
 }
 
-export interface CharacterResult {
+export interface CharacterResult extends ApiObject {
   characters?: Array<Character> | number[];
 }
 
-export interface Character {
+export interface Character extends ApiObject {
   id: number;
   akas?: Array<string> | number[];
   country_name?: string;
@@ -131,11 +147,11 @@ export interface Character {
   url?: string;
 }
 
-export interface CharacterMugShotResult {
+export interface CharacterMugShotResult extends ApiObject {
   charactermugshots?: Array<CharacterMugShot> | number[];
 }
 
-export interface CharacterMugShot {
+export interface CharacterMugShot extends ApiObject {
   id: number;
   alpha_channel?: boolean;
   animated?: boolean;
@@ -145,11 +161,11 @@ export interface CharacterMugShot {
   width?: number;
 }
 
-export interface CollectionResult {
+export interface CollectionResult extends ApiObject {
   collections?: Array<Collection> | number[];
 }
 
-export interface Collection {
+export interface Collection extends ApiObject {
   id: number;
   created_at?: number;
   games?: Array<Game> | number[];
@@ -159,11 +175,11 @@ export interface Collection {
   url?: string;
 }
 
-export interface CompanyResult {
+export interface CompanyResult extends ApiObject {
   companies?: Array<Company> | number[];
 }
 
-export interface Company {
+export interface Company extends ApiObject {
   id: number;
   change_date?: number;
   change_date_category?: DateFormatStartDateCategoryEnum;
@@ -184,11 +200,11 @@ export interface Company {
   websites?: Array<CompanyWebsite> | number[];
 }
 
-export interface CompanyLogoResult {
+export interface CompanyLogoResult extends ApiObject {
   companylogos?: Array<CompanyLogo> | number[];
 }
 
-export interface CompanyLogo {
+export interface CompanyLogo extends ApiObject {
   id: number;
   alpha_channel?: boolean;
   animated?: boolean;
@@ -198,22 +214,22 @@ export interface CompanyLogo {
   width?: number;
 }
 
-export interface CompanyWebsiteResult {
+export interface CompanyWebsiteResult extends ApiObject {
   companywebsites?: Array<CompanyWebsite> | number[];
 }
 
-export interface CompanyWebsite {
+export interface CompanyWebsite extends ApiObject {
   id: number;
   category?: WebsiteCategoryEnum;
   trusted?: boolean;
   url?: string;
 }
 
-export interface CoverResult {
+export interface CoverResult extends ApiObject {
   covers?: Array<Cover> | number[];
 }
 
-export interface Cover {
+export interface Cover extends ApiObject {
   id: number;
   alpha_channel?: boolean;
   animated?: boolean;
@@ -224,11 +240,11 @@ export interface Cover {
   width?: number;
 }
 
-export interface CreditResult {
+export interface CreditResult extends ApiObject {
   credits?: Array<Credit> | number[];
 }
 
-export interface Credit {
+export interface Credit extends ApiObject {
   id: number;
   category?: CreditCategoryEnum;
   character?: Character | number;
@@ -245,11 +261,11 @@ export interface Credit {
   updated_at?: number;
 }
 
-export interface ExternalGameResult {
+export interface ExternalGameResult extends ApiObject {
   externalgames?: Array<ExternalGame> | number[];
 }
 
-export interface ExternalGame {
+export interface ExternalGame extends ApiObject {
   id: number;
   category?: ExternalGameCategoryEnum;
   created_at?: number;
@@ -261,11 +277,11 @@ export interface ExternalGame {
   year?: number;
 }
 
-export interface FeedResult {
+export interface FeedResult extends ApiObject {
   feeds?: Array<Feed> | number[];
 }
 
-export interface Feed {
+export interface Feed extends ApiObject {
   id: number;
   category?: FeedCategoryEnum;
   content?: string;
@@ -284,11 +300,11 @@ export interface Feed {
   user?: number;
 }
 
-export interface FeedFollowResult {
+export interface FeedFollowResult extends ApiObject {
   feedfollows?: Array<FeedFollow> | number[];
 }
 
-export interface FeedFollow {
+export interface FeedFollow extends ApiObject {
   id: number;
   created_at?: number;
   feed?: FeedCategoryEnum;
@@ -297,21 +313,21 @@ export interface FeedFollow {
   user?: User | number;
 }
 
-export interface FollowResult {
+export interface FollowResult extends ApiObject {
   follows?: Array<Follow> | number[];
 }
 
-export interface Follow {
+export interface Follow extends ApiObject {
   id: number;
   game?: Game | number;
   user?: User | number;
 }
 
-export interface FranchiseResult {
+export interface FranchiseResult extends ApiObject {
   franchises?: Array<Franchise> | number[];
 }
 
-export interface Franchise {
+export interface Franchise extends ApiObject {
   id: number;
   created_at?: number;
   games?: Array<Game> | number[];
@@ -321,11 +337,11 @@ export interface Franchise {
   url?: string;
 }
 
-export interface GameResult {
+export interface GameResult extends ApiObject {
   games?: Array<Game> | number[];
 }
 
-export interface Game {
+export interface Game extends ApiObject {
   id: number;
   age_ratings?: Array<AgeRating> | number[];
   aggregated_rating?: number;
@@ -380,11 +396,11 @@ export interface Game {
   websites?: Array<Website> | number[];
 }
 
-export interface GameEngineResult {
+export interface GameEngineResult extends ApiObject {
   gameengines?: Array<GameEngine> | number[];
 }
 
-export interface GameEngine {
+export interface GameEngine extends ApiObject {
   id: number;
   companies?: Array<Company> | number[];
   created_at?: number;
@@ -397,11 +413,11 @@ export interface GameEngine {
   url?: string;
 }
 
-export interface GameEngineLogoResult {
+export interface GameEngineLogoResult extends ApiObject {
   gameenginelogos?: Array<GameEngineLogo> | number[];
 }
 
-export interface GameEngineLogo {
+export interface GameEngineLogo extends ApiObject {
   id: number;
   alpha_channel?: boolean;
   animated?: boolean;
@@ -411,11 +427,11 @@ export interface GameEngineLogo {
   width?: number;
 }
 
-export interface GameModeResult {
+export interface GameModeResult extends ApiObject {
   gamemodes?: Array<GameMode> | number[];
 }
 
-export interface GameMode {
+export interface GameMode extends ApiObject {
   id: number;
   created_at?: number;
   name?: string;
@@ -424,11 +440,11 @@ export interface GameMode {
   url?: string;
 }
 
-export interface GameVersionResult {
+export interface GameVersionResult extends ApiObject {
   gameversions?: Array<GameVersion> | number[];
 }
 
-export interface GameVersion {
+export interface GameVersion extends ApiObject {
   id: number;
   created_at?: number;
   features?: Array<GameVersionFeature> | number[];
@@ -438,11 +454,11 @@ export interface GameVersion {
   url?: string;
 }
 
-export interface GameVersionFeatureResult {
+export interface GameVersionFeatureResult extends ApiObject {
   gameversionfeatures?: Array<GameVersionFeature> | number[];
 }
 
-export interface GameVersionFeature {
+export interface GameVersionFeature extends ApiObject {
   id: number;
   category?: GameVersionFeatureCategoryEnum;
   description?: string;
@@ -451,11 +467,11 @@ export interface GameVersionFeature {
   values?: Array<GameVersionFeatureValue> | number[];
 }
 
-export interface GameVersionFeatureValueResult {
+export interface GameVersionFeatureValueResult extends ApiObject {
   gameversionfeaturevalues?: Array<GameVersionFeatureValue> | number[];
 }
 
-export interface GameVersionFeatureValue {
+export interface GameVersionFeatureValue extends ApiObject {
   id: number;
   game?: Game | number;
   game_feature?: GameVersionFeature | number;
@@ -463,22 +479,22 @@ export interface GameVersionFeatureValue {
   note?: string;
 }
 
-export interface GameVideoResult {
+export interface GameVideoResult extends ApiObject {
   gamevideos?: Array<GameVideo> | number[];
 }
 
-export interface GameVideo {
+export interface GameVideo extends ApiObject {
   id: number;
   game?: Game | number;
   name?: string;
   video_id?: string;
 }
 
-export interface GenreResult {
+export interface GenreResult extends ApiObject {
   genres?: Array<Genre> | number[];
 }
 
-export interface Genre {
+export interface Genre extends ApiObject {
   id: number;
   created_at?: number;
   name?: string;
@@ -487,11 +503,11 @@ export interface Genre {
   url?: string;
 }
 
-export interface InvolvedCompanyResult {
+export interface InvolvedCompanyResult extends ApiObject {
   involvedcompanies?: Array<InvolvedCompany> | number[];
 }
 
-export interface InvolvedCompany {
+export interface InvolvedCompany extends ApiObject {
   id: number;
   company?: Company | number;
   created_at?: number;
@@ -503,11 +519,11 @@ export interface InvolvedCompany {
   updated_at?: number;
 }
 
-export interface KeywordResult {
+export interface KeywordResult extends ApiObject {
   keywords?: Array<Keyword> | number[];
 }
 
-export interface Keyword {
+export interface Keyword extends ApiObject {
   id: number;
   created_at?: number;
   name?: string;
@@ -516,11 +532,11 @@ export interface Keyword {
   url?: string;
 }
 
-export interface ListResult {
+export interface ListResult extends ApiObject {
   lists?: Array<List> | number[];
 }
 
-export interface List {
+export interface List extends ApiObject {
   id: number;
   created_at?: number;
   description?: string;
@@ -538,11 +554,11 @@ export interface List {
   user?: User | number;
 }
 
-export interface ListEntryResult {
+export interface ListEntryResult extends ApiObject {
   listentries?: Array<ListEntry> | number[];
 }
 
-export interface ListEntry {
+export interface ListEntry extends ApiObject {
   id: number;
   description?: string;
   game?: Game | number;
@@ -553,11 +569,11 @@ export interface ListEntry {
   user?: User | number;
 }
 
-export interface MultiplayerModeResult {
+export interface MultiplayerModeResult extends ApiObject {
   multiplayermodes?: Array<MultiplayerMode> | number[];
 }
 
-export interface MultiplayerMode {
+export interface MultiplayerMode extends ApiObject {
   id: number;
   campaigncoop?: boolean;
   dropin?: boolean;
@@ -574,11 +590,11 @@ export interface MultiplayerMode {
   splitscreenonline?: boolean;
 }
 
-export interface PageResult {
+export interface PageResult extends ApiObject {
   pages?: Array<Page> | number[];
 }
 
-export interface Page {
+export interface Page extends ApiObject {
   id: number;
   background?: PageBackground | number;
   battlenet?: string;
@@ -603,11 +619,11 @@ export interface Page {
   websites?: Array<PageWebsite> | number[];
 }
 
-export interface PageBackgroundResult {
+export interface PageBackgroundResult extends ApiObject {
   pagebackgrounds?: Array<PageBackground> | number[];
 }
 
-export interface PageBackground {
+export interface PageBackground extends ApiObject {
   id: number;
   alpha_channel?: boolean;
   animated?: boolean;
@@ -617,11 +633,11 @@ export interface PageBackground {
   width?: number;
 }
 
-export interface PageLogoResult {
+export interface PageLogoResult extends ApiObject {
   pagelogos?: Array<PageLogo> | number[];
 }
 
-export interface PageLogo {
+export interface PageLogo extends ApiObject {
   id: number;
   alpha_channel?: boolean;
   animated?: boolean;
@@ -631,22 +647,22 @@ export interface PageLogo {
   width?: number;
 }
 
-export interface PageWebsiteResult {
+export interface PageWebsiteResult extends ApiObject {
   pagewebsites?: Array<PageWebsite> | number[];
 }
 
-export interface PageWebsite {
+export interface PageWebsite extends ApiObject {
   id: number;
   category?: WebsiteCategoryEnum;
   trusted?: boolean;
   url?: string;
 }
 
-export interface PersonResult {
+export interface PersonResult extends ApiObject {
   people?: Array<Person> | number[];
 }
 
-export interface Person {
+export interface Person extends ApiObject {
   id: number;
   bio?: string;
   characters?: Array<Character> | number[];
@@ -668,11 +684,11 @@ export interface Person {
   websites?: Array<PersonWebsite> | number[];
 }
 
-export interface PersonMugShotResult {
+export interface PersonMugShotResult extends ApiObject {
   personmugshots?: Array<PersonMugShot> | number[];
 }
 
-export interface PersonMugShot {
+export interface PersonMugShot extends ApiObject {
   id: number;
   height?: number;
   image_id?: string;
@@ -680,22 +696,22 @@ export interface PersonMugShot {
   width?: number;
 }
 
-export interface PersonWebsiteResult {
+export interface PersonWebsiteResult extends ApiObject {
   personwebsites?: Array<PersonWebsite> | number[];
 }
 
-export interface PersonWebsite {
+export interface PersonWebsite extends ApiObject {
   id: number;
   category?: WebsiteCategoryEnum;
   trusted?: boolean;
   url?: string;
 }
 
-export interface PlatformResult {
+export interface PlatformResult extends ApiObject {
   platforms?: Array<Platform> | number[];
 }
 
-export interface Platform {
+export interface Platform extends ApiObject {
   id: number;
   abbreviation?: string;
   alternative_name?: string;
@@ -713,11 +729,11 @@ export interface Platform {
   websites?: Array<PlatformWebsite> | number[];
 }
 
-export interface PlatformLogoResult {
+export interface PlatformLogoResult extends ApiObject {
   platformlogos?: Array<PlatformLogo> | number[];
 }
 
-export interface PlatformLogo {
+export interface PlatformLogo extends ApiObject {
   id: number;
   alpha_channel?: boolean;
   animated?: boolean;
@@ -727,11 +743,11 @@ export interface PlatformLogo {
   width?: number;
 }
 
-export interface PlatformVersionResult {
+export interface PlatformVersionResult extends ApiObject {
   platformversions?: Array<PlatformVersion> | number[];
 }
 
-export interface PlatformVersion {
+export interface PlatformVersion extends ApiObject {
   id: number;
   companies?: Array<PlatformVersionCompany> | number[];
   connectivity?: string;
@@ -754,11 +770,11 @@ export interface PlatformVersion {
   url?: string;
 }
 
-export interface PlatformVersionCompanyResult {
+export interface PlatformVersionCompanyResult extends ApiObject {
   platformversioncompanies?: Array<PlatformVersionCompany> | number[];
 }
 
-export interface PlatformVersionCompany {
+export interface PlatformVersionCompany extends ApiObject {
   id: number;
   comment?: string;
   company?: Company | number;
@@ -766,11 +782,11 @@ export interface PlatformVersionCompany {
   manufacturer?: boolean;
 }
 
-export interface PlatformVersionReleaseDateResult {
+export interface PlatformVersionReleaseDateResult extends ApiObject {
   platformversionreleasedates?: Array<PlatformVersionReleaseDate> | number[];
 }
 
-export interface PlatformVersionReleaseDate {
+export interface PlatformVersionReleaseDate extends ApiObject {
   id: number;
   category?: DateFormatStartDateCategoryEnum;
   created_at?: number;
@@ -783,22 +799,22 @@ export interface PlatformVersionReleaseDate {
   y?: number;
 }
 
-export interface PlatformWebsiteResult {
+export interface PlatformWebsiteResult extends ApiObject {
   platformwebsites?: Array<PlatformWebsite> | number[];
 }
 
-export interface PlatformWebsite {
+export interface PlatformWebsite extends ApiObject {
   id: number;
   category?: WebsiteCategoryEnum;
   trusted?: boolean;
   url?: string;
 }
 
-export interface PlayerPerspectiveResult {
+export interface PlayerPerspectiveResult extends ApiObject {
   playerperspectives?: Array<PlayerPerspective> | number[];
 }
 
-export interface PlayerPerspective {
+export interface PlayerPerspective extends ApiObject {
   id: number;
   created_at?: number;
   name?: string;
@@ -807,21 +823,21 @@ export interface PlayerPerspective {
   url?: string;
 }
 
-export interface ProductFamilyResult {
+export interface ProductFamilyResult extends ApiObject {
   productfamilies?: Array<ProductFamily> | number[];
 }
 
-export interface ProductFamily {
+export interface ProductFamily extends ApiObject {
   id: number;
   name?: string;
   slug?: string;
 }
 
-export interface PulseResult {
+export interface PulseResult extends ApiObject {
   pulses?: Array<Pulse> | number[];
 }
 
-export interface Pulse {
+export interface Pulse extends ApiObject {
   id: number;
   author?: string;
   category?: number;
@@ -840,11 +856,11 @@ export interface Pulse {
   website?: PulseUrl | number;
 }
 
-export interface PulseGroupResult {
+export interface PulseGroupResult extends ApiObject {
   pulsegroups?: Array<PulseGroup> | number[];
 }
 
-export interface PulseGroup {
+export interface PulseGroup extends ApiObject {
   id: number;
   created_at?: number;
   game?: Game | number;
@@ -855,11 +871,11 @@ export interface PulseGroup {
   updated_at?: number;
 }
 
-export interface PulseImageResult {
+export interface PulseImageResult extends ApiObject {
   pulseimages?: Array<PulseImage> | number[];
 }
 
-export interface PulseImage {
+export interface PulseImage extends ApiObject {
   id: number;
   alpha_channel?: boolean;
   animated?: boolean;
@@ -869,43 +885,43 @@ export interface PulseImage {
   width?: number;
 }
 
-export interface PulseSourceResult {
+export interface PulseSourceResult extends ApiObject {
   pulsesources?: Array<PulseSource> | number[];
 }
 
-export interface PulseSource {
+export interface PulseSource extends ApiObject {
   id: number;
   game?: Game | number;
   name?: string;
   page?: Page | number;
 }
 
-export interface PulseUrlResult {
+export interface PulseUrlResult extends ApiObject {
   pulseurls?: Array<PulseUrl> | number[];
 }
 
-export interface PulseUrl {
+export interface PulseUrl extends ApiObject {
   id: number;
   trusted?: boolean;
   url?: string;
 }
 
-export interface RateResult {
+export interface RateResult extends ApiObject {
   rates?: Array<Rate> | number[];
 }
 
-export interface Rate {
+export interface Rate extends ApiObject {
   id: number;
   game?: Game | number;
   rating?: number;
   user?: User | number;
 }
 
-export interface ReleaseDateResult {
+export interface ReleaseDateResult extends ApiObject {
   releasedates?: Array<ReleaseDate> | number[];
 }
 
-export interface ReleaseDate {
+export interface ReleaseDate extends ApiObject {
   id: number;
   category?: DateFormatStartDateCategoryEnum;
   created_at?: number;
@@ -919,11 +935,11 @@ export interface ReleaseDate {
   y?: number;
 }
 
-export interface ReviewResult {
+export interface ReviewResult extends ApiObject {
   reviews?: Array<Review> | number[];
 }
 
-export interface Review {
+export interface Review extends ApiObject {
   id: number;
   category?: ReviewCategoryEnum;
   conclusion?: string;
@@ -945,21 +961,21 @@ export interface Review {
   views?: number;
 }
 
-export interface ReviewVideoResult {
+export interface ReviewVideoResult extends ApiObject {
   reviewvideos?: Array<ReviewVideo> | number[];
 }
 
-export interface ReviewVideo {
+export interface ReviewVideo extends ApiObject {
   id: number;
   trusted?: boolean;
   url?: string;
 }
 
-export interface ScreenshotResult {
+export interface ScreenshotResult extends ApiObject {
   screenshots?: Array<Screenshot> | number[];
 }
 
-export interface Screenshot {
+export interface Screenshot extends ApiObject {
   id: number;
   alpha_channel?: boolean;
   animated?: boolean;
@@ -970,11 +986,11 @@ export interface Screenshot {
   width?: number;
 }
 
-export interface SearchResult {
+export interface SearchResult extends ApiObject {
   searches?: Array<Search> | number[];
 }
 
-export interface Search {
+export interface Search extends ApiObject {
   id: number;
   alternative_name?: string;
   character?: Character | number;
@@ -991,11 +1007,11 @@ export interface Search {
   theme?: Theme | number;
 }
 
-export interface SocialMetricResult {
+export interface SocialMetricResult extends ApiObject {
   socialmetrics?: Array<SocialMetric> | number[];
 }
 
-export interface SocialMetric {
+export interface SocialMetric extends ApiObject {
   id: number;
   category?: SocialMetricCategoryEnum;
   created_at?: number;
@@ -1003,11 +1019,11 @@ export interface SocialMetric {
   value?: number;
 }
 
-export interface SocialMetricSourceResult {
+export interface SocialMetricSourceResult extends ApiObject {
   socialmetricsources?: Array<SocialMetricSource> | number[];
 }
 
-export interface SocialMetricSource {
+export interface SocialMetricSource extends ApiObject {
   id: number;
   category?: number;
   channel?: string;
@@ -1027,11 +1043,11 @@ export interface SocialMetricSource {
   url?: string;
 }
 
-export interface TestDummyResult {
+export interface TestDummyResult extends ApiObject {
   testdummies?: Array<TestDummy> | number[];
 }
 
-export interface TestDummy {
+export interface TestDummy extends ApiObject {
   id: number;
   bool_value?: boolean;
   created_at?: number;
@@ -1052,11 +1068,11 @@ export interface TestDummy {
   user?: User | number;
 }
 
-export interface ThemeResult {
+export interface ThemeResult extends ApiObject {
   themes?: Array<Theme> | number[];
 }
 
-export interface Theme {
+export interface Theme extends ApiObject {
   id: number;
   created_at?: number;
   name?: string;
@@ -1065,11 +1081,11 @@ export interface Theme {
   url?: string;
 }
 
-export interface TimeToBeatResult {
+export interface TimeToBeatResult extends ApiObject {
   timetobeats?: Array<TimeToBeat> | number[];
 }
 
-export interface TimeToBeat {
+export interface TimeToBeat extends ApiObject {
   id: number;
   completely?: number;
   game?: Game | number;
@@ -1077,11 +1093,11 @@ export interface TimeToBeat {
   normally?: number;
 }
 
-export interface TitleResult {
+export interface TitleResult extends ApiObject {
   titles?: Array<Title> | number[];
 }
 
-export interface Title {
+export interface Title extends ApiObject {
   id: number;
   created_at?: number;
   description?: string;
@@ -1092,11 +1108,11 @@ export interface Title {
   url?: string;
 }
 
-export interface UserResult {
+export interface UserResult extends ApiObject {
   users?: Array<User> | number[];
 }
 
-export interface User {
+export interface User extends ApiObject {
   id: number;
   battlenet?: string;
   color?: ColorColorEnum;
@@ -1123,11 +1139,11 @@ export interface User {
   youtube?: string;
 }
 
-export interface WebsiteResult {
+export interface WebsiteResult extends ApiObject {
   websites?: Array<Website> | number[];
 }
 
-export interface Website {
+export interface Website extends ApiObject {
   id: number;
   category?: WebsiteCategoryEnum;
   game?: Game | number;

@@ -1,6 +1,6 @@
 {
   "name": "@igdb/types",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Typescript definitions for IGDB API",
   "main": "index.d.ts",
   "scripts": {

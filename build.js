@@ -36,11 +36,18 @@ const replaceUndefined = (string, key, value, postfix = '') => {
   return string.replace(regex, ` ${key}${optional}: ${value}${postfix};`);
 };
 
+const addExtends = (input) => {
+  return input.replace(/interface (.*) {/g, 'interface $1 extends ApiObject {');
+}
+
 getProto().then(rawProto => {
   const data = parse(rawProto);
   const messages = data.content.filter(i => i.type === 'message').filter(i => i.name);
   const enums = data.content.filter(i => i.type === 'enum');
   const dataContainer = [];
+
+  const defaultTypes = require('fs').readFileSync('defaultTypes.d.ts');
+  dataContainer.push(defaultTypes);
   
   messages.forEach(message => {
     const dataType = {};
@@ -84,6 +91,8 @@ getProto().then(rawProto => {
         definitionString = replaceUndefined(definitionString, key, value);
       }
     });
+    
+    definitionString = addExtends(definitionString);
 
     dataContainer.push(`export ${definitionString}`);
   });
