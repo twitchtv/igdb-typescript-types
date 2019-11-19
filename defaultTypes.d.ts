@@ -12,4 +12,5 @@ export type ApiObjectProperty =
   | number
   | string
   | string[]
-  | boolean;
+  | boolean
+  | undefined;
