@@ -12,7 +12,8 @@ export type ApiObjectProperty =
   | number
   | string
   | string[]
-  | boolean;
+  | boolean
+  | undefined;
 
 export interface Count extends ApiObject {
   count?: number;
@@ -1245,12 +1246,9 @@ export enum WebsiteCategoryEnum {
   WEBSITE_ANDROID = 12,
   WEBSITE_STEAM = 13,
   WEBSITE_REDDIT = 14,
-  WEBSITE_DISCORD = 15,
-  WEBSITE_GOOGLE_PLUS = 16,
-  WEBSITE_TUMBLR = 17,
-  WEBSITE_LINKEDIN = 18,
-  WEBSITE_PINTEREST = 19,
-  WEBSITE_SOUNDCLOUD = 20
+  WEBSITE_ITCH = 15,
+  WEBSITE_EPICGAMES = 16,
+  WEBSITE_GOG = 17
 }
 
 export enum CreditCategoryEnum {

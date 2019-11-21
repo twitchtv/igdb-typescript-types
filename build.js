@@ -2,6 +2,7 @@ const https = require('https');
 const parse = require('proto-parse');
 const snakeCase = require('snake-case');
 const { createInterfacesFromObject } = require('typescript-interface-generator');
+const { readFileSync, writeFileSync } = require('fs');
 
 const typeExamples = {
   uint64: 1,
@@ -46,7 +47,7 @@ getProto().then(rawProto => {
   const enums = data.content.filter(i => i.type === 'enum');
   const dataContainer = [];
 
-  const defaultTypes = require('fs').readFileSync('defaultTypes.d.ts');
+  const defaultTypes = readFileSync('defaultTypes.d.ts');
   dataContainer.push(defaultTypes);
   
   messages.forEach(message => {
@@ -104,7 +105,7 @@ getProto().then(rawProto => {
     dataContainer.push(definitionString);
   });
 
-  require('fs').writeFileSync('index.d.ts', dataContainer.join('\n'));
+  writeFileSync('index.d.ts', dataContainer.join('\n'));
 
 });
 
