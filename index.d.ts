@@ -1,4 +1,19 @@
-import { ApiObject } from "./defaultTypes";
+/** ApiObject Type, id and other key:value pairs */
+export interface ApiObject {
+  id: number;
+  [keys: string]: ApiObjectProperty;
+}
+
+/** Possible types of an ApiObject's properties */
+export type ApiObjectProperty =
+  | ApiObject[]
+  | ApiObject
+  | number[]
+  | number
+  | string
+  | string[]
+  | boolean
+  | undefined;
 
 export interface Count extends ApiObject {
   count?: number;
@@ -1137,6 +1152,7 @@ export interface Website extends ApiObject {
   url?: string;
 }
 
+
 export enum AchievementCategoryEnum {
   ACHIEVEMENT_CATEGORY_NULL = 0,
   PLAYSTATION = 1,
@@ -1271,9 +1287,7 @@ export enum GameCategoryEnum {
   DLC_ADDON = 1,
   EXPANSION = 2,
   BUNDLE = 3,
-  STANDALONE_EXPANSION = 4,
-  MOD = 5,
-  EPISODE = 6
+  STANDALONE_EXPANSION = 4
 }
 
 export enum GameStatusEnum {
@@ -1282,8 +1296,7 @@ export enum GameStatusEnum {
   BETA = 3,
   EARLY_ACCESS = 4,
   OFFLINE = 5,
-  CANCELLED = 6,
-  RUMORED = 7
+  CANCELLED = 6
 }
 
 export enum GameVersionFeatureCategoryEnum {
