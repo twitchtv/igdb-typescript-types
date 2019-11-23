@@ -9,7 +9,7 @@
   },
   "author": "Jake Cattrall",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "proto-parse": "0.0.4",
     "snake-case": "^2.1.0",
     "typescript-interface-generator": "0.0.6"
