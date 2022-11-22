@@ -461,7 +461,7 @@ export interface Platform extends ApiObject {
   generation?: number;
   name?: string;
   platform_logo?: PlatformLogo | number;
-  product_family?: ProductFamily | number;
+  platform_family?: PlatformFamily | number;
   slug?: string;
   summary?: string;
   updated_at?: number;
@@ -564,11 +564,11 @@ export interface PlayerPerspective extends ApiObject {
   url?: string;
 }
 
-export interface ProductFamilyResult extends ApiObject {
-  product_families?: Array<ProductFamily> | number[];
+export interface PlatformFamilyResult extends ApiObject {
+  product_families?: Array<PlatformFamily> | number[];
 }
 
-export interface ProductFamily extends ApiObject {
+export interface PlatformFamily extends ApiObject {
   id: number;
   name?: string;
   slug?: string;
@@ -717,18 +717,23 @@ export enum RegionLanguageEnum {
   CHINA = 6,
   ASIA = 7,
   WORLDWIDE = 8,
-  HONG_KONG = 9,
-  SOUTH_KOREA = 10,
+  SOUTH_KOREA = 9,
+  BRAZIL = 10,
 }
 
 export enum AgeRatingCategoryEnum {
-  AGERATING_CATEGORY_NULL = 0,
+  AGE_RATING_CATEGORY_NULL = 0,
   ESRB = 1,
   PEGI = 2,
+  CERO = 3,
+  USK = 4,
+  GRAC = 5,
+  CLASS_IND = 6,
+  ACB = 7,
 }
 
 export enum AgeRatingRatingEnum {
-  AGERATING_RATING_NULL = 0,
+  AGE_RATING_RATING_NULL = 0,
   THREE = 1,
   SEVEN = 2,
   TWELVE = 3,
@@ -741,13 +746,38 @@ export enum AgeRatingRatingEnum {
   T = 10,
   M = 11,
   AO = 12,
+  CERO_A = 13,
+  CERO_B = 14,
+  CERO_C = 15,
+  CERO_D = 16,
+  CERO_Z = 17,
+  USK_0 = 18,
+  USK_6 = 19,
+  USK_12 = 20,
+  USK_18 = 21,
+  GRAC_ALL = 22,
+  GRAC_TWELVE = 23,
+  GRAC_FIFTEEN = 24,
+  GRAC_EIGHTEEN = 25,
+  GRAC_TESTING = 26,
+  CLASS_IND_L = 27,
+  CLASS_IND_TEN = 28,
+  CLASS_IND_TWELVE = 29,
+  CLASS_IND_FOURTEEN = 30,
+  CLASS_IND_SIXTEEN = 31,
+  CLASS_IND_EIGHTEEN = 32,
+  ACB_G = 33,
+  ACB_PG = 34,
+  ACB_M = 35,
+  ACB_MA15 = 36,
+  ACB_R18 = 37,
+  ACB_RC = 38,
 }
 
 export enum CharacterGenderEnum {
-  GENDER_GENDER_NULL = 0,
-  MALE = 1,
-  FEMALE = 2,
-  OTHER = 3,
+  MALE = 0,
+  FEMALE = 1,
+  OTHER = 2,
 }
 
 export enum CharacterSpeciesEnum {
@@ -788,17 +818,31 @@ export enum WebsiteCategoryEnum {
   WEBSITE_ITCH = 15,
   WEBSITE_EPICGAMES = 16,
   WEBSITE_GOG = 17,
+  WEBSITE_DISCORD = 18,
 }
 
 export enum ExternalGameCategoryEnum {
-  EXTERNALGAME_CATEGORY_NULL = 0,
-  EXTERNALGAME_STEAM = 1,
-  EXTERNALGAME_GOG = 5,
-  EXTERNALGAME_YOUTUBE = 10,
-  EXTERNALGAME_MICROSOFT = 11,
-  EXTERNALGAME_APPLE = 13,
-  EXTERNALGAME_TWITCH = 14,
-  EXTERNALGAME_ANDROID = 15,
+  EXTERNAL_GAME_CATEGORY_NULL = 0,
+  EXTERNAL_GAME_STEAM = 1,
+  EXTERNAL_GAME_GOG = 5,
+  EXTERNAL_GAME_YOUTUBE = 10,
+  EXTERNAL_GAME_MICROSOFT = 11,
+  EXTERNAL_GAME_APPLE = 13,
+  EXTERNAL_GAME_TWITCH = 14,
+  EXTERNAL_GAME_ANDROID = 15,
+  EXTERNAL_GAME_AMAZON_ASIN = 20,
+  EXTERNAL_GAME_AMAZON_LUNA = 22,
+  EXTERNAL_GAME_AMAZON_ADG = 23,
+  EXTERNAL_GAME_EPIC_GAME_STORE = 26,
+  EXTERNAL_GAME_OCULUS = 28,
+  EXTERNAL_GAME_UTOMIK = 29,
+  EXTERNAL_GAME_ITCH_IO = 30,
+  EXTERNAL_GAME_XBOX_MARKETPLACE = 31,
+  EXTERNAL_GAME_KARTRIDGE = 32,
+  EXTERNAL_GAME_PLAYSTATION_STORE_US = 36,
+  EXTERNAL_GAME_FOCUS_ENTERTAINMENT = 37,
+  EXTERNAL_GAME_XBOX_GAME_PASS_ULTIMATE_CLOUD = 54,
+  EXTERNAL_GAME_GAMEJOLT = 55,
 }
 
 export enum GameCategoryEnum {
@@ -807,6 +851,16 @@ export enum GameCategoryEnum {
   EXPANSION = 2,
   BUNDLE = 3,
   STANDALONE_EXPANSION = 4,
+  MOD = 5,
+  EPISODE = 6,
+  SEASON = 7,
+  REMAKE = 8,
+  REMASTER = 9,
+  EXPANDED_GAME = 10,
+  PORT = 11,
+  FORK = 12,
+  PACK = 13,
+  UPDATE = 14,
 }
 
 export enum GameStatusEnum {
@@ -816,6 +870,8 @@ export enum GameStatusEnum {
   EARLY_ACCESS = 4,
   OFFLINE = 5,
   CANCELLED = 6,
+  RUMORED = 7,
+  DELISTED = 8,
 }
 
 export enum GameVersionFeatureCategoryEnum {
@@ -849,7 +905,7 @@ export enum PlatformCategoryEnum {
 }
 
 export enum TestDummyEnumTestEnum {
-  TESTDUMMY_ENUM_TEST_NULL = 0,
+  TEST_DUMMY_ENUM_TEST_NULL = 0,
   ENUM1 = 1,
   ENUM2 = 2,
 }
