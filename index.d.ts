@@ -30,7 +30,7 @@ export interface MultiQueryResultArray extends ApiObject {
 }
 
 export interface AgeRatingResult extends ApiObject {
-  ageratings?: Array<AgeRating> | number[];
+  age_ratings?: Array<AgeRating> | number[];
 }
 
 export interface AgeRating extends ApiObject {
@@ -43,7 +43,9 @@ export interface AgeRating extends ApiObject {
 }
 
 export interface AgeRatingContentDescriptionResult extends ApiObject {
-  ageratingcontentdescriptions?: Array<AgeRatingContentDescription> | number[];
+  age_rating_content_descriptions?:
+    | Array<AgeRatingContentDescription>
+    | number[];
 }
 
 export interface AgeRatingContentDescription extends ApiObject {
@@ -53,7 +55,7 @@ export interface AgeRatingContentDescription extends ApiObject {
 }
 
 export interface AlternativeNameResult extends ApiObject {
-  alternativenames?: Array<AlternativeName> | number[];
+  alternative_names?: Array<AlternativeName> | number[];
 }
 
 export interface AlternativeName extends ApiObject {
@@ -64,7 +66,7 @@ export interface AlternativeName extends ApiObject {
 }
 
 export interface ApiTokenResult extends ApiObject {
-  apitokens?: Array<ApiToken> | number[];
+  api_tokens?: Array<ApiToken> | number[];
 }
 
 export interface ApiToken extends ApiObject {
@@ -101,7 +103,7 @@ export interface Character extends ApiObject {
   created_at?: number;
   description?: string;
   games?: Array<Game> | number[];
-  gender?: GenderGenderEnum;
+  gender?: CharacterGenderEnum;
   mug_shot?: CharacterMugShot | number;
   name?: string;
   slug?: string;
@@ -111,7 +113,7 @@ export interface Character extends ApiObject {
 }
 
 export interface CharacterMugShotResult extends ApiObject {
-  charactermugshots?: Array<CharacterMugShot> | number[];
+  character_mug_shots?: Array<CharacterMugShot> | number[];
 }
 
 export interface CharacterMugShot extends ApiObject {
@@ -164,7 +166,7 @@ export interface Company extends ApiObject {
 }
 
 export interface CompanyLogoResult extends ApiObject {
-  companylogos?: Array<CompanyLogo> | number[];
+  company_logos?: Array<CompanyLogo> | number[];
 }
 
 export interface CompanyLogo extends ApiObject {
@@ -178,7 +180,7 @@ export interface CompanyLogo extends ApiObject {
 }
 
 export interface CompanyWebsiteResult extends ApiObject {
-  companywebsites?: Array<CompanyWebsite> | number[];
+  company_websites?: Array<CompanyWebsite> | number[];
 }
 
 export interface CompanyWebsite extends ApiObject {
@@ -204,7 +206,7 @@ export interface Cover extends ApiObject {
 }
 
 export interface ExternalGameResult extends ApiObject {
-  externalgames?: Array<ExternalGame> | number[];
+  external_games?: Array<ExternalGame> | number[];
 }
 
 export interface ExternalGame extends ApiObject {
@@ -290,7 +292,7 @@ export interface Game extends ApiObject {
 }
 
 export interface GameEngineResult extends ApiObject {
-  gameengines?: Array<GameEngine> | number[];
+  game_engines?: Array<GameEngine> | number[];
 }
 
 export interface GameEngine extends ApiObject {
@@ -307,7 +309,7 @@ export interface GameEngine extends ApiObject {
 }
 
 export interface GameEngineLogoResult extends ApiObject {
-  gameenginelogos?: Array<GameEngineLogo> | number[];
+  game_engine_logos?: Array<GameEngineLogo> | number[];
 }
 
 export interface GameEngineLogo extends ApiObject {
@@ -321,7 +323,7 @@ export interface GameEngineLogo extends ApiObject {
 }
 
 export interface GameModeResult extends ApiObject {
-  gamemodes?: Array<GameMode> | number[];
+  game_modes?: Array<GameMode> | number[];
 }
 
 export interface GameMode extends ApiObject {
@@ -334,7 +336,7 @@ export interface GameMode extends ApiObject {
 }
 
 export interface GameVersionResult extends ApiObject {
-  gameversions?: Array<GameVersion> | number[];
+  game_versions?: Array<GameVersion> | number[];
 }
 
 export interface GameVersion extends ApiObject {
@@ -348,7 +350,7 @@ export interface GameVersion extends ApiObject {
 }
 
 export interface GameVersionFeatureResult extends ApiObject {
-  gameversionfeatures?: Array<GameVersionFeature> | number[];
+  game_version_features?: Array<GameVersionFeature> | number[];
 }
 
 export interface GameVersionFeature extends ApiObject {
@@ -361,7 +363,7 @@ export interface GameVersionFeature extends ApiObject {
 }
 
 export interface GameVersionFeatureValueResult extends ApiObject {
-  gameversionfeaturevalues?: Array<GameVersionFeatureValue> | number[];
+  game_version_feature_values?: Array<GameVersionFeatureValue> | number[];
 }
 
 export interface GameVersionFeatureValue extends ApiObject {
@@ -373,7 +375,7 @@ export interface GameVersionFeatureValue extends ApiObject {
 }
 
 export interface GameVideoResult extends ApiObject {
-  gamevideos?: Array<GameVideo> | number[];
+  game_videos?: Array<GameVideo> | number[];
 }
 
 export interface GameVideo extends ApiObject {
@@ -397,7 +399,7 @@ export interface Genre extends ApiObject {
 }
 
 export interface InvolvedCompanyResult extends ApiObject {
-  involvedcompanies?: Array<InvolvedCompany> | number[];
+  involved_companies?: Array<InvolvedCompany> | number[];
 }
 
 export interface InvolvedCompany extends ApiObject {
@@ -426,7 +428,7 @@ export interface Keyword extends ApiObject {
 }
 
 export interface MultiplayerModeResult extends ApiObject {
-  multiplayermodes?: Array<MultiplayerMode> | number[];
+  multiplayer_modes?: Array<MultiplayerMode> | number[];
 }
 
 export interface MultiplayerMode extends ApiObject {
@@ -469,7 +471,7 @@ export interface Platform extends ApiObject {
 }
 
 export interface PlatformLogoResult extends ApiObject {
-  platformlogos?: Array<PlatformLogo> | number[];
+  platform_logos?: Array<PlatformLogo> | number[];
 }
 
 export interface PlatformLogo extends ApiObject {
@@ -483,7 +485,7 @@ export interface PlatformLogo extends ApiObject {
 }
 
 export interface PlatformVersionResult extends ApiObject {
-  platformversions?: Array<PlatformVersion> | number[];
+  platform_versions?: Array<PlatformVersion> | number[];
 }
 
 export interface PlatformVersion extends ApiObject {
@@ -510,7 +512,7 @@ export interface PlatformVersion extends ApiObject {
 }
 
 export interface PlatformVersionCompanyResult extends ApiObject {
-  platformversioncompanies?: Array<PlatformVersionCompany> | number[];
+  platform_version_companies?: Array<PlatformVersionCompany> | number[];
 }
 
 export interface PlatformVersionCompany extends ApiObject {
@@ -522,7 +524,7 @@ export interface PlatformVersionCompany extends ApiObject {
 }
 
 export interface PlatformVersionReleaseDateResult extends ApiObject {
-  platformversionreleasedates?: Array<PlatformVersionReleaseDate> | number[];
+  platform_version_release_dates?: Array<PlatformVersionReleaseDate> | number[];
 }
 
 export interface PlatformVersionReleaseDate extends ApiObject {
@@ -539,7 +541,7 @@ export interface PlatformVersionReleaseDate extends ApiObject {
 }
 
 export interface PlatformWebsiteResult extends ApiObject {
-  platformwebsites?: Array<PlatformWebsite> | number[];
+  platform_websites?: Array<PlatformWebsite> | number[];
 }
 
 export interface PlatformWebsite extends ApiObject {
@@ -550,7 +552,7 @@ export interface PlatformWebsite extends ApiObject {
 }
 
 export interface PlayerPerspectiveResult extends ApiObject {
-  playerperspectives?: Array<PlayerPerspective> | number[];
+  player_perspectives?: Array<PlayerPerspective> | number[];
 }
 
 export interface PlayerPerspective extends ApiObject {
@@ -563,7 +565,7 @@ export interface PlayerPerspective extends ApiObject {
 }
 
 export interface ProductFamilyResult extends ApiObject {
-  productfamilies?: Array<ProductFamily> | number[];
+  product_families?: Array<ProductFamily> | number[];
 }
 
 export interface ProductFamily extends ApiObject {
@@ -573,7 +575,7 @@ export interface ProductFamily extends ApiObject {
 }
 
 export interface ReleaseDateResult extends ApiObject {
-  releasedates?: Array<ReleaseDate> | number[];
+  release_dates?: Array<ReleaseDate> | number[];
 }
 
 export interface ReleaseDate extends ApiObject {
@@ -625,7 +627,7 @@ export interface Search extends ApiObject {
 }
 
 export interface TestDummyResult extends ApiObject {
-  testdummies?: Array<TestDummy> | number[];
+  test_dummies?: Array<TestDummy> | number[];
 }
 
 export interface TestDummy extends ApiObject {
@@ -669,7 +671,7 @@ export interface UserResult extends ApiObject {
 export interface User extends ApiObject {
   id: number;
   battlenet?: string;
-  color?: ColorColorEnum;
+  color?: UserColorEnum;
   created_at?: number;
   discord?: string;
   facebook?: string;
@@ -741,7 +743,7 @@ export enum AgeRatingRatingEnum {
   AO = 12,
 }
 
-export enum GenderGenderEnum {
+export enum CharacterGenderEnum {
   GENDER_GENDER_NULL = 0,
   MALE = 1,
   FEMALE = 2,
@@ -827,7 +829,7 @@ export enum GameVersionFeatureValueIncludedFeatureEnum {
   PRE_ORDER_ONLY = 2,
 }
 
-export enum ColorColorEnum {
+export enum UserColorEnum {
   GREEN = 0,
   BLUE = 1,
   RED = 2,
