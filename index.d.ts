@@ -29,43 +29,6 @@ export interface MultiQueryResultArray extends ApiObject {
   result?: Array<MultiQueryResult> | number[];
 }
 
-export interface AchievementResult extends ApiObject {
-  achievements?: Array<Achievement> | number[];
-}
-
-export interface Achievement extends ApiObject {
-  id: number;
-  achievement_icon?: AchievementIcon | number;
-  category?: AchievementCategoryEnum;
-  created_at?: number;
-  description?: string;
-  external_id?: string;
-  game?: Game | number;
-  language?: RegionLanguageEnum;
-  locked_achievement_icon?: AchievementIcon | number;
-  name?: string;
-  owners?: number;
-  owners_percentage?: number;
-  rank?: AchievementRankEnum;
-  slug?: string;
-  tags?: Array<number>;
-  updated_at?: number;
-}
-
-export interface AchievementIconResult extends ApiObject {
-  achievementicons?: Array<AchievementIcon> | number[];
-}
-
-export interface AchievementIcon extends ApiObject {
-  id: number;
-  alpha_channel?: boolean;
-  animated?: boolean;
-  height?: number;
-  image_id?: string;
-  url?: string;
-  width?: number;
-}
-
 export interface AgeRatingResult extends ApiObject {
   ageratings?: Array<AgeRating> | number[];
 }
@@ -77,6 +40,7 @@ export interface AgeRating extends ApiObject {
   rating?: AgeRatingRatingEnum;
   rating_cover_url?: string;
   synopsis?: string;
+  checksum?: string;
 }
 
 export interface AgeRatingContentDescriptionResult extends ApiObject {
@@ -87,6 +51,7 @@ export interface AgeRatingContentDescription extends ApiObject {
   id: number;
   category?: AgeRatingRatingEnum;
   description?: string;
+  checksum?: string;
 }
 
 export interface AlternativeNameResult extends ApiObject {
@@ -98,18 +63,7 @@ export interface AlternativeName extends ApiObject {
   comment?: string;
   game?: Game | number;
   name?: string;
-}
-
-export interface ApiTokenResult extends ApiObject {
-  apitokens?: Array<ApiToken> | number[];
-}
-
-export interface ApiToken extends ApiObject {
-  id: number;
-  created_at?: number;
-  expires_in?: number;
-  token?: string;
-  user?: number;
+  checksum?: string;
 }
 
 export interface ArtworkResult extends ApiObject {
@@ -125,6 +79,7 @@ export interface Artwork extends ApiObject {
   image_id?: string;
   url?: string;
   width?: number;
+  checksum?: string;
 }
 
 export interface CharacterResult extends ApiObject {
@@ -141,11 +96,11 @@ export interface Character extends ApiObject {
   gender?: GenderGenderEnum;
   mug_shot?: CharacterMugShot | number;
   name?: string;
-  people?: Array<Person> | number[];
   slug?: string;
   species?: CharacterSpeciesEnum;
   updated_at?: number;
   url?: string;
+  checksum?: string;
 }
 
 export interface CharacterMugShotResult extends ApiObject {
@@ -160,6 +115,7 @@ export interface CharacterMugShot extends ApiObject {
   image_id?: string;
   url?: string;
   width?: number;
+  checksum?: string;
 }
 
 export interface CollectionResult extends ApiObject {
@@ -174,6 +130,7 @@ export interface Collection extends ApiObject {
   slug?: string;
   updated_at?: number;
   url?: string;
+  checksum?: string;
 }
 
 export interface CompanyResult extends ApiObject {
@@ -183,7 +140,7 @@ export interface CompanyResult extends ApiObject {
 export interface Company extends ApiObject {
   id: number;
   change_date?: number;
-  change_date_category?: DateFormatStartDateCategoryEnum;
+  change_date_category?: DateFormatChangeDateCategoryEnum;
   changed_company_id?: Company | number;
   country?: number;
   created_at?: number;
@@ -195,10 +152,11 @@ export interface Company extends ApiObject {
   published?: Array<Game> | number[];
   slug?: string;
   start_date?: number;
-  start_date_category?: DateFormatStartDateCategoryEnum;
+  start_date_category?: DateFormatChangeDateCategoryEnum;
   updated_at?: number;
   url?: string;
   websites?: Array<CompanyWebsite> | number[];
+  checksum?: string;
 }
 
 export interface CompanyLogoResult extends ApiObject {
@@ -213,6 +171,7 @@ export interface CompanyLogo extends ApiObject {
   image_id?: string;
   url?: string;
   width?: number;
+  checksum?: string;
 }
 
 export interface CompanyWebsiteResult extends ApiObject {
@@ -224,6 +183,7 @@ export interface CompanyWebsite extends ApiObject {
   category?: WebsiteCategoryEnum;
   trusted?: boolean;
   url?: string;
+  checksum?: string;
 }
 
 export interface CoverResult extends ApiObject {
@@ -239,27 +199,8 @@ export interface Cover extends ApiObject {
   image_id?: string;
   url?: string;
   width?: number;
-}
-
-export interface CreditResult extends ApiObject {
-  credits?: Array<Credit> | number[];
-}
-
-export interface Credit extends ApiObject {
-  id: number;
-  category?: CreditCategoryEnum;
-  character?: Character | number;
-  character_credited_name?: string;
-  comment?: string;
-  company?: Company | number;
-  country?: number;
-  created_at?: number;
-  credited_name?: string;
-  game?: Game | number;
-  person?: Person | number;
-  person_title?: Title | number;
-  position?: number;
-  updated_at?: number;
+  checksum?: string;
+  game_localization?: GameLocalization | number;
 }
 
 export interface ExternalGameResult extends ApiObject {
@@ -276,52 +217,10 @@ export interface ExternalGame extends ApiObject {
   updated_at?: number;
   url?: string;
   year?: number;
-}
-
-export interface FeedResult extends ApiObject {
-  feeds?: Array<Feed> | number[];
-}
-
-export interface Feed extends ApiObject {
-  id: number;
-  category?: FeedCategoryEnum;
-  content?: string;
-  created_at?: number;
-  feed_likes_count?: number;
-  feed_video?: GameVideo | number;
-  games?: Array<Game> | number[];
-  meta?: string;
-  published_at?: number;
-  pulse?: Pulse | number;
-  slug?: string;
-  title?: string;
-  uid?: string;
-  updated_at?: number;
-  url?: string;
-  user?: number;
-}
-
-export interface FeedFollowResult extends ApiObject {
-  feedfollows?: Array<FeedFollow> | number[];
-}
-
-export interface FeedFollow extends ApiObject {
-  id: number;
-  created_at?: number;
-  feed?: FeedCategoryEnum;
-  published_at?: number;
-  updated_at?: number;
-  user?: User | number;
-}
-
-export interface FollowResult extends ApiObject {
-  follows?: Array<Follow> | number[];
-}
-
-export interface Follow extends ApiObject {
-  id: number;
-  game?: Game | number;
-  user?: User | number;
+  media?: ExternalGameMediaEnum;
+  platform?: Platform | number;
+  countries?: Array<number>;
+  checksum?: string;
 }
 
 export interface FranchiseResult extends ApiObject {
@@ -336,6 +235,7 @@ export interface Franchise extends ApiObject {
   slug?: string;
   updated_at?: number;
   url?: string;
+  checksum?: string;
 }
 
 export interface GameResult extends ApiObject {
@@ -372,8 +272,6 @@ export interface Game extends ApiObject {
   parent_game?: Game | number;
   platforms?: Array<Platform> | number[];
   player_perspectives?: Array<PlayerPerspective> | number[];
-  popularity?: number;
-  pulse_count?: number;
   rating?: number;
   rating_count?: number;
   release_dates?: Array<ReleaseDate> | number[];
@@ -386,7 +284,6 @@ export interface Game extends ApiObject {
   summary?: string;
   tags?: Array<number>;
   themes?: Array<Theme> | number[];
-  time_to_beat?: TimeToBeat | number;
   total_rating?: number;
   total_rating_count?: number;
   updated_at?: number;
@@ -395,6 +292,14 @@ export interface Game extends ApiObject {
   version_title?: string;
   videos?: Array<GameVideo> | number[];
   websites?: Array<Website> | number[];
+  checksum?: string;
+  remakes?: Array<Game> | number[];
+  remasters?: Array<Game> | number[];
+  expanded_games?: Array<Game> | number[];
+  ports?: Array<Game> | number[];
+  forks?: Array<Game> | number[];
+  language_supports?: Array<LanguageSupport> | number[];
+  game_localizations?: Array<GameLocalization> | number[];
 }
 
 export interface GameEngineResult extends ApiObject {
@@ -412,6 +317,7 @@ export interface GameEngine extends ApiObject {
   slug?: string;
   updated_at?: number;
   url?: string;
+  checksum?: string;
 }
 
 export interface GameEngineLogoResult extends ApiObject {
@@ -426,6 +332,22 @@ export interface GameEngineLogo extends ApiObject {
   image_id?: string;
   url?: string;
   width?: number;
+  checksum?: string;
+}
+
+export interface GameLocalizationResult extends ApiObject {
+  gamelocalizations?: Array<GameLocalization> | number[];
+}
+
+export interface GameLocalization extends ApiObject {
+  id: number;
+  name?: string;
+  cover?: Cover | number;
+  game?: Game | number;
+  region?: Region | number;
+  created_at?: number;
+  updated_at?: number;
+  checksum?: string;
 }
 
 export interface GameModeResult extends ApiObject {
@@ -439,6 +361,7 @@ export interface GameMode extends ApiObject {
   slug?: string;
   updated_at?: number;
   url?: string;
+  checksum?: string;
 }
 
 export interface GameVersionResult extends ApiObject {
@@ -453,6 +376,7 @@ export interface GameVersion extends ApiObject {
   games?: Array<Game> | number[];
   updated_at?: number;
   url?: string;
+  checksum?: string;
 }
 
 export interface GameVersionFeatureResult extends ApiObject {
@@ -466,6 +390,7 @@ export interface GameVersionFeature extends ApiObject {
   position?: number;
   title?: string;
   values?: Array<GameVersionFeatureValue> | number[];
+  checksum?: string;
 }
 
 export interface GameVersionFeatureValueResult extends ApiObject {
@@ -478,6 +403,7 @@ export interface GameVersionFeatureValue extends ApiObject {
   game_feature?: GameVersionFeature | number;
   included_feature?: GameVersionFeatureValueIncludedFeatureEnum;
   note?: string;
+  checksum?: string;
 }
 
 export interface GameVideoResult extends ApiObject {
@@ -489,6 +415,7 @@ export interface GameVideo extends ApiObject {
   game?: Game | number;
   name?: string;
   video_id?: string;
+  checksum?: string;
 }
 
 export interface GenreResult extends ApiObject {
@@ -502,6 +429,7 @@ export interface Genre extends ApiObject {
   slug?: string;
   updated_at?: number;
   url?: string;
+  checksum?: string;
 }
 
 export interface InvolvedCompanyResult extends ApiObject {
@@ -518,6 +446,7 @@ export interface InvolvedCompany extends ApiObject {
   publisher?: boolean;
   supporting?: boolean;
   updated_at?: number;
+  checksum?: string;
 }
 
 export interface KeywordResult extends ApiObject {
@@ -531,43 +460,47 @@ export interface Keyword extends ApiObject {
   slug?: string;
   updated_at?: number;
   url?: string;
+  checksum?: string;
 }
 
-export interface ListResult extends ApiObject {
-  lists?: Array<List> | number[];
+export interface LanguageResult extends ApiObject {
+  languages?: Array<Language> | number[];
 }
 
-export interface List extends ApiObject {
+export interface Language extends ApiObject {
   id: number;
-  created_at?: number;
-  description?: string;
-  entries_count?: number;
-  list_entries?: Array<ListEntry> | number[];
-  list_tags?: Array<number>;
-  listed_games?: Array<Game> | number[];
   name?: string;
-  numbering?: boolean;
-  private?: boolean;
-  similar_lists?: Array<List> | number[];
-  slug?: string;
+  native_name?: string;
+  locale?: string;
+  created_at?: number;
   updated_at?: number;
-  url?: string;
-  user?: User | number;
+  checksum?: string;
 }
 
-export interface ListEntryResult extends ApiObject {
-  listentries?: Array<ListEntry> | number[];
+export interface LanguageSupportResult extends ApiObject {
+  languagesupports?: Array<LanguageSupport> | number[];
 }
 
-export interface ListEntry extends ApiObject {
+export interface LanguageSupport extends ApiObject {
   id: number;
-  description?: string;
   game?: Game | number;
-  list?: List | number;
-  platform?: Platform | number;
-  position?: number;
-  private?: boolean;
-  user?: User | number;
+  language?: Language | number;
+  language_support_type?: LanguageSupportType | number;
+  created_at?: number;
+  updated_at?: number;
+  checksum?: string;
+}
+
+export interface LanguageSupportTypeResult extends ApiObject {
+  languagesupporttypes?: Array<LanguageSupportType> | number[];
+}
+
+export interface LanguageSupportType extends ApiObject {
+  id: number;
+  name?: string;
+  created_at?: number;
+  updated_at?: number;
+  checksum?: string;
 }
 
 export interface MultiplayerModeResult extends ApiObject {
@@ -589,123 +522,7 @@ export interface MultiplayerMode extends ApiObject {
   platform?: Platform | number;
   splitscreen?: boolean;
   splitscreenonline?: boolean;
-}
-
-export interface PageResult extends ApiObject {
-  pages?: Array<Page> | number[];
-}
-
-export interface Page extends ApiObject {
-  id: number;
-  background?: PageBackground | number;
-  battlenet?: string;
-  category?: PageCategoryEnum;
-  color?: ColorColorEnum;
-  company?: Company | number;
-  country?: number;
-  created_at?: number;
-  description?: string;
-  feed?: Feed | number;
-  game?: Game | number;
-  name?: string;
-  origin?: string;
-  page_follows_count?: number;
-  page_logo?: PageLogo | number;
-  slug?: string;
-  sub_category?: PageSubCategoryEnum;
-  updated_at?: number;
-  uplay?: string;
-  url?: string;
-  user?: User | number;
-  websites?: Array<PageWebsite> | number[];
-}
-
-export interface PageBackgroundResult extends ApiObject {
-  pagebackgrounds?: Array<PageBackground> | number[];
-}
-
-export interface PageBackground extends ApiObject {
-  id: number;
-  alpha_channel?: boolean;
-  animated?: boolean;
-  height?: number;
-  image_id?: string;
-  url?: string;
-  width?: number;
-}
-
-export interface PageLogoResult extends ApiObject {
-  pagelogos?: Array<PageLogo> | number[];
-}
-
-export interface PageLogo extends ApiObject {
-  id: number;
-  alpha_channel?: boolean;
-  animated?: boolean;
-  height?: number;
-  image_id?: string;
-  url?: string;
-  width?: number;
-}
-
-export interface PageWebsiteResult extends ApiObject {
-  pagewebsites?: Array<PageWebsite> | number[];
-}
-
-export interface PageWebsite extends ApiObject {
-  id: number;
-  category?: WebsiteCategoryEnum;
-  trusted?: boolean;
-  url?: string;
-}
-
-export interface PersonResult extends ApiObject {
-  people?: Array<Person> | number[];
-}
-
-export interface Person extends ApiObject {
-  id: number;
-  bio?: string;
-  characters?: Array<Character> | number[];
-  country?: number;
-  created_at?: number;
-  credited_games?: Array<Game> | number[];
-  description?: string;
-  dob?: number;
-  gender?: GenderGenderEnum;
-  loves_count?: number;
-  mug_shot?: PersonMugShot | number;
-  name?: string;
-  nicknames?: Array<string> | number[];
-  parent?: Person | number;
-  slug?: string;
-  updated_at?: number;
-  url?: string;
-  voice_acted?: Array<Game> | number[];
-  websites?: Array<PersonWebsite> | number[];
-}
-
-export interface PersonMugShotResult extends ApiObject {
-  personmugshots?: Array<PersonMugShot> | number[];
-}
-
-export interface PersonMugShot extends ApiObject {
-  id: number;
-  height?: number;
-  image_id?: string;
-  url?: string;
-  width?: number;
-}
-
-export interface PersonWebsiteResult extends ApiObject {
-  personwebsites?: Array<PersonWebsite> | number[];
-}
-
-export interface PersonWebsite extends ApiObject {
-  id: number;
-  category?: WebsiteCategoryEnum;
-  trusted?: boolean;
-  url?: string;
+  checksum?: string;
 }
 
 export interface PlatformResult extends ApiObject {
@@ -721,13 +538,25 @@ export interface Platform extends ApiObject {
   generation?: number;
   name?: string;
   platform_logo?: PlatformLogo | number;
-  product_family?: ProductFamily | number;
+  platform_family?: PlatformFamily | number;
   slug?: string;
   summary?: string;
   updated_at?: number;
   url?: string;
   versions?: Array<PlatformVersion> | number[];
   websites?: Array<PlatformWebsite> | number[];
+  checksum?: string;
+}
+
+export interface PlatformFamilyResult extends ApiObject {
+  platformfamilies?: Array<PlatformFamily> | number[];
+}
+
+export interface PlatformFamily extends ApiObject {
+  id: number;
+  name?: string;
+  slug?: string;
+  checksum?: string;
 }
 
 export interface PlatformLogoResult extends ApiObject {
@@ -742,6 +571,7 @@ export interface PlatformLogo extends ApiObject {
   image_id?: string;
   url?: string;
   width?: number;
+  checksum?: string;
 }
 
 export interface PlatformVersionResult extends ApiObject {
@@ -769,6 +599,7 @@ export interface PlatformVersion extends ApiObject {
   storage?: string;
   summary?: string;
   url?: string;
+  checksum?: string;
 }
 
 export interface PlatformVersionCompanyResult extends ApiObject {
@@ -781,6 +612,7 @@ export interface PlatformVersionCompany extends ApiObject {
   company?: Company | number;
   developer?: boolean;
   manufacturer?: boolean;
+  checksum?: string;
 }
 
 export interface PlatformVersionReleaseDateResult extends ApiObject {
@@ -789,15 +621,16 @@ export interface PlatformVersionReleaseDateResult extends ApiObject {
 
 export interface PlatformVersionReleaseDate extends ApiObject {
   id: number;
-  category?: DateFormatStartDateCategoryEnum;
+  category?: DateFormatChangeDateCategoryEnum;
   created_at?: number;
   date?: number;
   human?: string;
   m?: number;
   platform_version?: PlatformVersion | number;
-  region?: RegionLanguageEnum;
+  region?: RegionRegionEnum;
   updated_at?: number;
   y?: number;
+  checksum?: string;
 }
 
 export interface PlatformWebsiteResult extends ApiObject {
@@ -809,6 +642,7 @@ export interface PlatformWebsite extends ApiObject {
   category?: WebsiteCategoryEnum;
   trusted?: boolean;
   url?: string;
+  checksum?: string;
 }
 
 export interface PlayerPerspectiveResult extends ApiObject {
@@ -822,100 +656,21 @@ export interface PlayerPerspective extends ApiObject {
   slug?: string;
   updated_at?: number;
   url?: string;
+  checksum?: string;
 }
 
-export interface ProductFamilyResult extends ApiObject {
-  productfamilies?: Array<ProductFamily> | number[];
+export interface RegionResult extends ApiObject {
+  regions?: Array<Region> | number[];
 }
 
-export interface ProductFamily extends ApiObject {
+export interface Region extends ApiObject {
   id: number;
   name?: string;
-  slug?: string;
-}
-
-export interface PulseResult extends ApiObject {
-  pulses?: Array<Pulse> | number[];
-}
-
-export interface Pulse extends ApiObject {
-  id: number;
-  author?: string;
-  category?: number;
+  category?: string;
+  identifier?: string;
   created_at?: number;
-  ignored?: boolean;
-  image?: string;
-  published_at?: number;
-  pulse_image?: PulseImage | number;
-  pulse_source?: PulseSource | number;
-  summary?: string;
-  tags?: Array<number>;
-  title?: string;
-  uid?: string;
   updated_at?: number;
-  videos?: Array<string> | number[];
-  website?: PulseUrl | number;
-}
-
-export interface PulseGroupResult extends ApiObject {
-  pulsegroups?: Array<PulseGroup> | number[];
-}
-
-export interface PulseGroup extends ApiObject {
-  id: number;
-  created_at?: number;
-  game?: Game | number;
-  name?: string;
-  published_at?: number;
-  pulses?: Array<Pulse> | number[];
-  tags?: Array<number>;
-  updated_at?: number;
-}
-
-export interface PulseImageResult extends ApiObject {
-  pulseimages?: Array<PulseImage> | number[];
-}
-
-export interface PulseImage extends ApiObject {
-  id: number;
-  alpha_channel?: boolean;
-  animated?: boolean;
-  height?: number;
-  image_id?: string;
-  url?: string;
-  width?: number;
-}
-
-export interface PulseSourceResult extends ApiObject {
-  pulsesources?: Array<PulseSource> | number[];
-}
-
-export interface PulseSource extends ApiObject {
-  id: number;
-  game?: Game | number;
-  name?: string;
-  page?: Page | number;
-}
-
-export interface PulseUrlResult extends ApiObject {
-  pulseurls?: Array<PulseUrl> | number[];
-}
-
-export interface PulseUrl extends ApiObject {
-  id: number;
-  trusted?: boolean;
-  url?: string;
-}
-
-export interface RateResult extends ApiObject {
-  rates?: Array<Rate> | number[];
-}
-
-export interface Rate extends ApiObject {
-  id: number;
-  game?: Game | number;
-  rating?: number;
-  user?: User | number;
+  checksum?: string;
 }
 
 export interface ReleaseDateResult extends ApiObject {
@@ -924,52 +679,17 @@ export interface ReleaseDateResult extends ApiObject {
 
 export interface ReleaseDate extends ApiObject {
   id: number;
-  category?: DateFormatStartDateCategoryEnum;
+  category?: DateFormatChangeDateCategoryEnum;
   created_at?: number;
   date?: number;
   game?: Game | number;
   human?: string;
   m?: number;
   platform?: Platform | number;
-  region?: RegionLanguageEnum;
+  region?: RegionRegionEnum;
   updated_at?: number;
   y?: number;
-}
-
-export interface ReviewResult extends ApiObject {
-  reviews?: Array<Review> | number[];
-}
-
-export interface Review extends ApiObject {
-  id: number;
-  category?: ReviewCategoryEnum;
-  conclusion?: string;
-  content?: string;
-  created_at?: number;
-  game?: Game | number;
-  introduction?: string;
-  likes?: number;
-  negative_points?: string;
-  platform?: Platform | number;
-  positive_points?: string;
-  slug?: string;
-  title?: string;
-  updated_at?: number;
-  url?: string;
-  user?: User | number;
-  user_rating?: Rate | number;
-  video?: ReviewVideo | number;
-  views?: number;
-}
-
-export interface ReviewVideoResult extends ApiObject {
-  reviewvideos?: Array<ReviewVideo> | number[];
-}
-
-export interface ReviewVideo extends ApiObject {
-  id: number;
-  trusted?: boolean;
-  url?: string;
+  checksum?: string;
 }
 
 export interface ScreenshotResult extends ApiObject {
@@ -985,6 +705,7 @@ export interface Screenshot extends ApiObject {
   image_id?: string;
   url?: string;
   width?: number;
+  checksum?: string;
 }
 
 export interface SearchResult extends ApiObject {
@@ -1000,48 +721,11 @@ export interface Search extends ApiObject {
   description?: string;
   game?: Game | number;
   name?: string;
-  person?: Person | number;
   platform?: Platform | number;
-  popularity?: number;
   published_at?: number;
   test_dummy?: TestDummy | number;
   theme?: Theme | number;
-}
-
-export interface SocialMetricResult extends ApiObject {
-  socialmetrics?: Array<SocialMetric> | number[];
-}
-
-export interface SocialMetric extends ApiObject {
-  id: number;
-  category?: SocialMetricCategoryEnum;
-  created_at?: number;
-  social_metric_source?: SocialMetricSource | number;
-  value?: number;
-}
-
-export interface SocialMetricSourceResult extends ApiObject {
-  socialmetricsources?: Array<SocialMetricSource> | number[];
-}
-
-export interface SocialMetricSource extends ApiObject {
-  id: number;
-  category?: number;
-  channel?: string;
-  channel_title?: string;
-  created_at?: number;
-  duration?: number;
-  external_id?: string;
-  game?: Game | number;
-  internal_name?: string;
-  meta?: string;
-  metric_tags?: Array<string> | number[];
-  published_at?: number;
-  social_metrics?: Array<SocialMetric> | number[];
-  social_network?: SocialMetricSourceSocialNetworkEnum;
-  title?: string;
-  updated_at?: number;
-  url?: string;
+  checksum?: string;
 }
 
 export interface TestDummyResult extends ApiObject {
@@ -1066,7 +750,7 @@ export interface TestDummy extends ApiObject {
   test_dummy?: TestDummy | number;
   updated_at?: number;
   url?: string;
-  user?: User | number;
+  checksum?: string;
 }
 
 export interface ThemeResult extends ApiObject {
@@ -1080,64 +764,7 @@ export interface Theme extends ApiObject {
   slug?: string;
   updated_at?: number;
   url?: string;
-}
-
-export interface TimeToBeatResult extends ApiObject {
-  timetobeats?: Array<TimeToBeat> | number[];
-}
-
-export interface TimeToBeat extends ApiObject {
-  id: number;
-  completely?: number;
-  game?: Game | number;
-  hastly?: number;
-  normally?: number;
-}
-
-export interface TitleResult extends ApiObject {
-  titles?: Array<Title> | number[];
-}
-
-export interface Title extends ApiObject {
-  id: number;
-  created_at?: number;
-  description?: string;
-  games?: Array<Game> | number[];
-  name?: string;
-  slug?: string;
-  updated_at?: number;
-  url?: string;
-}
-
-export interface UserResult extends ApiObject {
-  users?: Array<User> | number[];
-}
-
-export interface User extends ApiObject {
-  id: number;
-  battlenet?: string;
-  color?: ColorColorEnum;
-  created_at?: number;
-  discord?: string;
-  facebook?: string;
-  google_plus?: string;
-  instagram?: string;
-  linkedin?: string;
-  origin?: string;
-  pinterest?: string;
-  presentation?: string;
-  reddit?: string;
-  role?: UserRoleEnum;
-  slug?: string;
-  soundcloud?: string;
-  steam?: string;
-  twitch?: string;
-  twitter?: string;
-  updated_at?: number;
-  uplay?: string;
-  url?: string;
-  username?: string;
-  youtube?: string;
+  checksum?: string;
 }
 
 export interface WebsiteResult extends ApiObject {
@@ -1150,42 +777,19 @@ export interface Website extends ApiObject {
   game?: Game | number;
   trusted?: boolean;
   url?: string;
+  checksum?: string;
 }
 
-
-export enum AchievementCategoryEnum {
-  ACHIEVEMENT_CATEGORY_NULL = 0,
-  PLAYSTATION = 1,
-  XBOX = 2,
-  STEAM = 3
-}
-
-export enum RegionLanguageEnum {
-  REGION_LANGUAGE_NULL = 0,
-  EUROPE = 1,
-  NORTH_AMERICA = 2,
-  AUSTRALIA = 3,
-  NEW_ZELAND = 4,
-  JAPAN = 5,
-  CHINA = 6,
-  ASIA = 7,
-  WORLDWIDE = 8,
-  HONG_KONG = 9,
-  SOUTH_KOREA = 10
-}
-
-export enum AchievementRankEnum {
-  ACHIEVEMENT_RANK_NULL = 0,
-  BRONZE = 1,
-  SILVER = 2,
-  GOLD = 3,
-  PLATINUM = 4
-}
 
 export enum AgeRatingCategoryEnum {
   AGERATING_CATEGORY_NULL = 0,
   ESRB = 1,
-  PEGI = 2
+  PEGI = 2,
+  CERO = 3,
+  USK = 4,
+  GRAC = 5,
+  CLASS_IND = 6,
+  ACB = 7
 }
 
 export enum AgeRatingRatingEnum {
@@ -1201,14 +805,39 @@ export enum AgeRatingRatingEnum {
   E10 = 9,
   T = 10,
   M = 11,
-  AO = 12
+  AO = 12,
+  CERO_A = 13,
+  CERO_B = 14,
+  CERO_C = 15,
+  CERO_D = 16,
+  CERO_Z = 17,
+  USK_0 = 18,
+  USK_6 = 19,
+  USK_12 = 20,
+  USK_18 = 21,
+  GRAC_ALL = 22,
+  GRAC_TWELVE = 23,
+  GRAC_FIFTEEN = 24,
+  GRAC_EIGHTEEN = 25,
+  GRAC_TESTING = 26,
+  CLASS_IND_L = 27,
+  CLASS_IND_TEN = 28,
+  CLASS_IND_TWELVE = 29,
+  CLASS_IND_FOURTEEN = 30,
+  CLASS_IND_SIXTEEN = 31,
+  CLASS_IND_EIGHTEEN = 32,
+  ACB_G = 33,
+  ACB_PG = 34,
+  ACB_M = 35,
+  ACB_MA15 = 36,
+  ACB_R18 = 37,
+  ACB_RC = 38
 }
 
 export enum GenderGenderEnum {
-  GENDER_GENDER_NULL = 0,
-  MALE = 1,
-  FEMALE = 2,
-  OTHER = 3
+  MALE = 0,
+  FEMALE = 1,
+  OTHER = 2
 }
 
 export enum CharacterSpeciesEnum {
@@ -1220,7 +849,7 @@ export enum CharacterSpeciesEnum {
   UNKNOWN = 5
 }
 
-export enum DateFormatStartDateCategoryEnum {
+export enum DateFormatChangeDateCategoryEnum {
   YYYYMMMMDD = 0,
   YYYYMMMM = 1,
   YYYY = 2,
@@ -1248,17 +877,8 @@ export enum WebsiteCategoryEnum {
   WEBSITE_REDDIT = 14,
   WEBSITE_ITCH = 15,
   WEBSITE_EPICGAMES = 16,
-  WEBSITE_GOG = 17
-}
-
-export enum CreditCategoryEnum {
-  CREDIT_CATEGORY_NULL = 0,
-  VOICE_ACTOR = 1,
-  LANGUAGE = 2,
-  COMPANY_CREDIT = 3,
-  EMPLOYEE = 4,
-  MISC = 5,
-  SUPPORT_COMPANY = 6
+  WEBSITE_GOG = 17,
+  WEBSITE_DISCORD = 18
 }
 
 export enum ExternalGameCategoryEnum {
@@ -1269,17 +889,26 @@ export enum ExternalGameCategoryEnum {
   EXTERNALGAME_MICROSOFT = 11,
   EXTERNALGAME_APPLE = 13,
   EXTERNALGAME_TWITCH = 14,
-  EXTERNALGAME_ANDROID = 15
+  EXTERNALGAME_ANDROID = 15,
+  EXTERNALGAME_AMAZON_ASIN = 20,
+  EXTERNALGAME_AMAZON_LUNA = 22,
+  EXTERNALGAME_AMAZON_ADG = 23,
+  EXTERNALGAME_EPIC_GAME_STORE = 26,
+  EXTERNALGAME_OCULUS = 28,
+  EXTERNALGAME_UTOMIK = 29,
+  EXTERNALGAME_ITCH_IO = 30,
+  EXTERNALGAME_XBOX_MARKETPLACE = 31,
+  EXTERNALGAME_KARTRIDGE = 32,
+  EXTERNALGAME_PLAYSTATION_STORE_US = 36,
+  EXTERNALGAME_FOCUS_ENTERTAINMENT = 37,
+  EXTERNALGAME_XBOX_GAME_PASS_ULTIMATE_CLOUD = 54,
+  EXTERNALGAME_GAMEJOLT = 55
 }
 
-export enum FeedCategoryEnum {
-  FEED_CATEGORY_NULL = 0,
-  PULSE_ARTICLE = 1,
-  COMING_SOON = 2,
-  NEW_TRAILER = 3,
-  USER_CONTRIBUTED_ITEM = 5,
-  USER_CONTRIBUTIONS_ITEM = 6,
-  PAGE_CONTRIBUTED_ITEM = 7
+export enum ExternalGameMediaEnum {
+  EXTERNALGAME_MEDIA_NULL = 0,
+  EXTERNALGAME_DIGITAL = 1,
+  EXTERNALGAME_PHYSICAL = 2
 }
 
 export enum GameCategoryEnum {
@@ -1287,7 +916,17 @@ export enum GameCategoryEnum {
   DLC_ADDON = 1,
   EXPANSION = 2,
   BUNDLE = 3,
-  STANDALONE_EXPANSION = 4
+  STANDALONE_EXPANSION = 4,
+  MOD = 5,
+  EPISODE = 6,
+  SEASON = 7,
+  REMAKE = 8,
+  REMASTER = 9,
+  EXPANDED_GAME = 10,
+  PORT = 11,
+  FORK = 12,
+  PACK = 13,
+  UPDATE = 14
 }
 
 export enum GameStatusEnum {
@@ -1296,7 +935,9 @@ export enum GameStatusEnum {
   BETA = 3,
   EARLY_ACCESS = 4,
   OFFLINE = 5,
-  CANCELLED = 6
+  CANCELLED = 6,
+  RUMORED = 7,
+  DELISTED = 8
 }
 
 export enum GameVersionFeatureCategoryEnum {
@@ -1310,33 +951,6 @@ export enum GameVersionFeatureValueIncludedFeatureEnum {
   PRE_ORDER_ONLY = 2
 }
 
-export enum PageCategoryEnum {
-  PAGE_CATEGORY_NULL = 0,
-  PERSONALITY = 1,
-  MEDIA_ORGANIZATION = 2,
-  CONTENT_CREATOR = 3,
-  CLAN_TEAM = 4
-}
-
-export enum ColorColorEnum {
-  GREEN = 0,
-  BLUE = 1,
-  RED = 2,
-  ORANGE = 3,
-  PINK = 4,
-  YELLOW = 5
-}
-
-export enum PageSubCategoryEnum {
-  PAGE_SUB_CATEGORY_NULL = 0,
-  USER = 1,
-  GAME = 2,
-  COMPANY = 3,
-  CONSUMER = 4,
-  INDUSTRY = 5,
-  E_SPORTS = 6
-}
-
 export enum PlatformCategoryEnum {
   PLATFORM_CATEGORY_NULL = 0,
   CONSOLE = 1,
@@ -1347,52 +961,22 @@ export enum PlatformCategoryEnum {
   COMPUTER = 6
 }
 
-export enum ReviewCategoryEnum {
-  REVIEW_CATEGORY_NULL = 0,
-  TEXT = 1,
-  VIDEO = 2
-}
-
-export enum SocialMetricCategoryEnum {
-  SOCIALMETRIC_CATEGORY_NULL = 0,
-  FOLLOWS = 1,
-  LIKES = 2,
-  HATES = 3,
-  SHARES = 4,
-  VIEW = 5,
-  COMMENTS = 6,
-  FAVORITES = 7
-}
-
-export enum SocialMetricSourceSocialNetworkEnum {
-  SOCIALMETRICSOURCE_SOCIAL_NETWORK_NULL = 0,
-  SOCIALMETRICSOURCE_OFFICIAL = 1,
-  SOCIALMETRICSOURCE_WIKIA = 2,
-  SOCIALMETRICSOURCE_WIKIPEDIA = 3,
-  SOCIALMETRICSOURCE_FACEBOOK = 4,
-  SOCIALMETRICSOURCE_TWITTER = 5,
-  SOCIALMETRICSOURCE_TWITCH = 6,
-  SOCIALMETRICSOURCE_INSTAGRAM = 8,
-  SOCIALMETRICSOURCE_YOUTUBE = 9,
-  SOCIALMETRICSOURCE_IPHONE = 10,
-  SOCIALMETRICSOURCE_IPAD = 11,
-  SOCIALMETRICSOURCE_ANDROID = 12,
-  SOCIALMETRICSOURCE_STEAM = 13,
-  SOCIALMETRICSOURCE_REDDIT = 14
+export enum RegionRegionEnum {
+  REGION_REGION_NULL = 0,
+  EUROPE = 1,
+  NORTH_AMERICA = 2,
+  AUSTRALIA = 3,
+  NEW_ZEALAND = 4,
+  JAPAN = 5,
+  CHINA = 6,
+  ASIA = 7,
+  WORLDWIDE = 8,
+  KOREA = 9,
+  BRAZIL = 10
 }
 
 export enum TestDummyEnumTestEnum {
   TESTDUMMY_ENUM_TEST_NULL = 0,
   ENUM1 = 1,
   ENUM2 = 2
-}
-
-export enum UserRoleEnum {
-  USER_ROLE_NULL = 0,
-  USER_USER = 1,
-  USER_ADVANCED_USER = 2,
-  USER_SUPER_ADVANCED_USER = 3,
-  USER_KEEPER = 4,
-  USER_ADMIN = 9,
-  USER_SUPER_ADMIN = 10
 }

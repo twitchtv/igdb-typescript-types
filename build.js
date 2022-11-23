@@ -15,7 +15,7 @@ const typeExamples = {
 }
 
 const getProto = () => new Promise((accept, reject) => {
-  https.get('https://api-v3.igdb.com/igdbapi.proto', (resp) => {
+  https.get('https://api.igdb.com/v4/igdbapi.proto', (resp) => {
     let data = '';
 
     resp.on('data', (chunk) => {
